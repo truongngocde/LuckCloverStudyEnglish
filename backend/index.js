@@ -57,7 +57,6 @@ mongoose
   })
   .then(() => {
     console.log(`Database connected successfully`);
-    console.log("Hello")
   });
 
 
