@@ -1,0 +1,66 @@
+[
+    {
+      "word": "happy",
+      "mean": "feeling or showing pleasure or contentment",
+      "type": "adj",
+      "level": "A2",
+      "phonetic": "/ˈhæpi/",
+      "examples": ["I'm so happy to see you!", "She has a happy smile."],
+      "picture": "https://example.com/happy.jpg",
+      "specialty": "10",
+      "topics": ["5", "12", "20"],
+      "synonyms": ["joyful", "pleased"],
+      "antonyms": ["sad", "unhappy"],
+      "note": "Be careful! 'Happy' is an adjective, not a verb.",
+      "isChecked": true
+    },
+    {
+      "word": "beautiful",
+      "mean": "pleasing the senses or mind aesthetically",
+      "type": "adj",
+      "level": "B1",
+      "phonetic": "/ˈbjuːtɪf(ə)l/",
+      "examples": ["The garden looks beautiful in the spring.", "She is a beautiful dancer."],
+      "picture": "https://example.com/beautiful.jpg",
+      "specialty": "5",
+      "topics": ["8", "15", "22"],
+      "synonyms": ["lovely", "attractive"],
+      "antonyms": ["ugly", "unattractive"],
+      "note": "Use 'beautiful' to describe something that looks nice or is visually appealing.",
+      "isChecked": false
+    },
+    {
+        "word": "apple",
+        "mean": "a round fruit with red or green skin and a whitish inside",
+        "type": "n",
+        "level": "A1",
+        "phonetic": "/ˈæp.əl/",
+        "examples": ["I like to eat apples.", "She bought a bag of apples from the store."],
+        "picture": "https://example.com/apple.jpg",
+        "specialty": "20",
+        "topics": ["1", "10", "15"],
+        "synonyms": ["fruit", "pomaceous fruit"],
+        "antonyms": ["orange", "banana"],
+        "note": "The word 'apple' can also refer to a brand of technology products.",
+        "isChecked": true
+    },
+    {
+        "word": "run",
+        "mean": "to move quickly on foot by taking quick steps",
+        "type": "v",
+        "level": "A2",
+        "phonetic": "/rʌn/",
+        "examples": ["I run every morning before work.", "The children are running in the park."],
+        "picture": null,
+        "specialty": "5",
+        "topics": ["2", "8", "12"],
+        "synonyms": ["jog", "sprint"],
+        "antonyms": ["walk", "crawl"],
+        "note": "In the sentence 'I run every morning', 'run' is a verb.",
+        "isChecked": false
+    }
+
+]
+  
+
+  
