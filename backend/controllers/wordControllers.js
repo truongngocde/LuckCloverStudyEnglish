@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const {isExistWord, uploadImage} = require('../services/utilsServices');
 
 const { getWordDetail, createNewWord } = require('../services/wordServices');
@@ -100,3 +101,21 @@ exports.getAllWords = async (req, res, next) => {
     }
 }
 
+=======
+const { getWordDetail } = require('../services/wordServices');
+
+exports.getWordDetails = async (req, res, next) => {
+    try {
+        const {word} = req.query;
+        const wordDetail = await getWordDetail(word);
+        if (wordDetail) {
+            return res.status(200).json(wordDetail)
+        }
+    }catch (error) {
+        console.log(error);
+        return res.status(503).json({
+            message: 'Lỗi dịch vụ, thử lại sau.'
+        });
+    }
+}
+>>>>>>> 6b2f26e08d69e2db20d97b3fce3409e5d02635d4

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Word = require('../models/wordModel');
 
 exports.createNewWord = async (wordInfo) => {
@@ -51,4 +52,15 @@ exports.getFavoriteList = async (rawFavorites = []) => {
     } catch (error) {
         throw error;
     }
+=======
+const Word = require('../models/wordModel');
+
+exports.getWordDetail = async (word = '') => {
+    try {
+        const res = await Word.findOne({ word });
+        return res;
+    } catch (error) {
+        throw error;
+    }
+>>>>>>> 6b2f26e08d69e2db20d97b3fce3409e5d02635d4
 }
