@@ -14,6 +14,7 @@ const https = require('https');
 const {MAX} = require('./constant');
 const wordRouters = require('./routers/wordRouters');
 const sentenceRouters = require('./routers/sentenceRouters');
+const blogRouters = require('./routers/blogRouters');
 
 
 // ============== set port ==============
@@ -42,6 +43,7 @@ if (!dev) {
 const BASE_URL = '/apis';
 app.use(`${BASE_URL}/words`, wordRouters)
 app.use(`${BASE_URL}/sentences`, sentenceRouters);
+app.use(`${BASE_URL}/blogs`, blogRouters);
 
 // =========== Connect mongodb with mongoose =========
 dotenv.config({ path: './config.env' });

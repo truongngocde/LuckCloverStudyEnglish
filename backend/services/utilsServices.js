@@ -1,5 +1,6 @@
 const { cloudinary } = require('../configs/cloudinaryConfig');
 const { MAX } = require('../constant');
+const Sentence = require('../models/sentenceModel');
 
 
 const Word = require('../models/wordModel');
@@ -27,4 +28,10 @@ exports.isExistWord = async (word = '', type = '') => {
         throw error;
     }
 }
+
+exports.isExistSentence = async (sentence = '') => {
+    if (sentence === '') return false;
+    const newRegex = new RegExp(sentence, 'i');
+    return await Sentence.exists({ sentence: newRegex });
+};
 

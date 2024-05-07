@@ -26,9 +26,20 @@ exports.getTotalSentences = async (topics = []) => {
 
 exports.getSentenceList = async (page = 1, perPage = 20, topics = []) => {
     try {
-        const pageInt = parseInt(page),
-            perPageInt = parseInt(perPage);
+        const pageInt = parseInt(page)
+        const perPageInt = parseInt(perPage);
+        const skip = (pageInt - 1) * perPageInt;
+
+        let query = {};
+        addTopicsQuery(topics, query);
+
+        const list = await Sentence.find(query)
+            .skip(skip)
+            .limit(perPageInt)
+            .select('-_id -isChecked -topics');
+        return list;
+
     } catch (error) {
-        
+        throw error;
     }
 }
