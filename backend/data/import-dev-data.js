@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const Word = require('../models/wordModel');
+const Sentence = require('../models/sentenceModel');
 const { error } = require('console');
 
 // Connect database
@@ -20,11 +21,13 @@ mongoose.connect(DB, {
 
 // READ JSON FILE
 const words = JSON.parse(fs.readFileSync(`${__dirname}/words.json`, 'utf-8'));
+const sentences = JSON.parse(fs.readFileSync(`${__dirname}/sentences.json`, 'utf-8'));
 
 // IMPORT DATA INTO DB
 const importData = async () => {
     try {
         await Word.create(words);
+        await Sentence.create(sentences);
         console.log('Data success loaded');
     } catch (error) {
         console.log(error);
@@ -36,6 +39,8 @@ const importData = async () => {
 const deleteAll = async() => {
     try {
         await Word.deleteMany();
+        await Sentence.deleteMany();
+
         console.log("Delete all data success");
     } catch (error) {
         console.log(error);
