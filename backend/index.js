@@ -9,19 +9,17 @@ const morgan = require('morgan');
 const path = require('path');
 const https = require('https');
 
-
 // import local file
-const {MAX} = require('./constant');
+const { MAX } = require('./constant');
 const wordRouters = require('./routers/wordRouters');
 const sentenceRouters = require('./routers/sentenceRouters');
+const challengeRoters = require('./routers/challengeRouters');
 const blogRouters = require('./routers/blogRouters');
-
 
 // ============== set port ==============
 const app = express();
 const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || '8080');
-
 
 // ============= setup ==================
 app.use(express.static(path.join(__dirname, 'public')));
@@ -34,15 +32,15 @@ if (!dev) {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
-
 } else {
   app.use(morgan('dev'));
 }
 
 // ============== APIs ==================
 const BASE_URL = '/apis';
-app.use(`${BASE_URL}/words`, wordRouters)
+app.use(`${BASE_URL}/words`, wordRouters);
 app.use(`${BASE_URL}/sentences`, sentenceRouters);
+app.use(`${BASE_URL}/challenges`, challengeRoters);
 app.use(`${BASE_URL}/blogs`, blogRouters);
 
 // =========== Connect mongodb with mongoose =========
@@ -62,7 +60,6 @@ mongoose
     console.log(`Database connected successfully`);
   });
 
-
 // ================== config ==================
 // app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
 // app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
@@ -70,9 +67,5 @@ mongoose
 // app.use(cors(corsConfig));
 
 app.listen(PORT, () => {
-    console.log(`Server is listening on http://localhost:${PORT} !!!`);
-})
-
-
-
-
+  console.log(`Server is listening on http://localhost:${PORT} !!!`);
+});
