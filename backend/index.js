@@ -13,6 +13,7 @@ const https = require('https');
 const { MAX } = require('./constant');
 const wordRouters = require('./routers/wordRouters');
 const sentenceRouters = require('./routers/sentenceRouters');
+const flashcardRouters = require('./routers/flashcardRouters');
 const challengeRoters = require('./routers/challengeRouters');
 const blogRouters = require('./routers/blogRouters');
 
@@ -40,6 +41,7 @@ if (!dev) {
 const BASE_URL = '/apis';
 app.use(`${BASE_URL}/words`, wordRouters);
 app.use(`${BASE_URL}/sentences`, sentenceRouters);
+app.use(`${BASE_URL}/flashcard`, flashcardRouters);
 app.use(`${BASE_URL}/challenges`, challengeRoters);
 app.use(`${BASE_URL}/blogs`, blogRouters);
 
@@ -54,7 +56,7 @@ mongoose
   .connect(DB, {
     // useUnifiedTopology: true,
     // useNewUrlParser: true,
-    //useCreateIndex: true,
+    // useCreateIndex: true,
   })
   .then(() => {
     console.log(`Database connected successfully`);

@@ -1,6 +1,6 @@
-const {isExistWord, uploadImage} = require('../services/utilsServices');
+const {isExistWord, uploadImage, getWordPack} = require('../services/utilsServices');
 
-const { getWordDetail, createNewWord } = require('../services/wordServices');
+const { createNewWord, searchWord, getWordDetail, getFavoriteList } = require('../services/wordServices');
 
 const Word = require('../models/wordModel');
 
@@ -17,7 +17,7 @@ exports.addWord = async (req, res, next) => {
         // upload desc picture 
         let pictureUrl = null;
         if(picture) {
-            pictureUrl = await uploadImage(picture, 'luckclover/words')
+            pictureUrl = await uploadImage(picture, 'luckcloverenglish/words')
         }
 
         // create the new word
@@ -97,6 +97,62 @@ exports.getAllWords = async (req, res, next) => {
             status: 'fail',
             message: error,
         }) 
+    }
+}
+
+exports.getWordPack = async (req, res, next) => {
+    try {
+        const { page, perPage, packInfo, sortType } = req.query;
+
+        const pageInt = parseInt(page);
+        const perPageInt = parseInt(perPage);
+        const skip = (pageInt - 1) * perPageInt;
+
+        const packList = await getWordPack(
+            JSON.parse(packInfo),
+            skip,
+            perPageInt,
+            '-_id type word mean phonetic picture',
+            sortType === 'asc' ? '1' : sortType === 'desc' ? '-1' : null,
+            null,
+        );
+
+        return res.status(200).json({ packList });
+    } catch (error) {
+        console.error('WORD GET WORD PACK ERROR: ', error);
+        return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
+    }
+}
+
+exports.getUserFavoriteList = async (req, res, next) => {
+    try {
+        const { user } = req;
+        if (!user || !user.favoriteList) {
+            return res.status(400).json({message: 'failed'});
+        }
+
+        const { favoriteList } = user;
+        if(!Array.isArray(favoriteList) || favoriteList.length === 0) {
+            return res.status(200).json({ list: [] });
+        }
+
+        let { page, perPage, sortType } = req.query;
+        page = parseInt(page);
+        perPage = parseInt(perPage);
+
+        let favoriteSorted = [...favoriteList];
+        if (sortType === 'asc') {
+            favoriteSorted.sort((a, b) => (a > b ? 1 : a < b ? -1 : 0));
+        }else if (sortType === 'desc') {
+            favoriteSorted.sort((a, b) => (a > b ? -1 : a < b ? 1: 0 ));
+        }
+        favoriteSorted = favoriteSorted.slice((page - 1) * perPage, page * perPage);
+
+        const packList = await getFavoriteList({ favoriteSorted });
+        return res.status(200).json({ packList });
+    } catch (error) {
+        console.error(' ERROR: ', error);
+        return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });
     }
 }
 

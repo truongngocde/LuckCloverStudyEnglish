@@ -9,7 +9,7 @@ const highcoreSchema = new mongoose.Schema({
         {
             accountId: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'account',
+                ref: 'Account',
             },
             score: Number,
         },
