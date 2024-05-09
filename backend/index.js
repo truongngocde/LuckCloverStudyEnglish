@@ -41,12 +41,12 @@ if (!dev) {
 const BASE_URL = '/apis';
 app.use(`${BASE_URL}/words`, wordRouters);
 app.use(`${BASE_URL}/sentences`, sentenceRouters);
-app.use(`${BASE_URL}/flashcard`, flashcardRouters);
+app.use(`${BASE_URL}/flashcards`, flashcardRouters);
 app.use(`${BASE_URL}/challenges`, challengeRoters);
 app.use(`${BASE_URL}/blogs`, blogRouters);
 
 // =========== Connect mongodb with mongoose =========
-dotenv.config({ path: './config.env' });
+dotenv.config({ path: 'config.env' });
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
