@@ -14,14 +14,15 @@ import { getUserInfo } from './redux/slices/useInfoSlice';
 import theme from './configs/theme';
 import routerConfig from './configs/routers';
 
-import HomePage from './pages/Home';
-
 const { routes, renderRoutes } = routerConfig;
+
 
 function App() {
   const [loading, setLoading] = useState(true);
   // const dispatch = useDispatch();
-  // const { isAuth } = useSelector((state) => state.userInfo);
+  const { isAuth } = false;
+
+  console.log(process.env.REACT_APP_API_LOCAL_BASE_URL)
 
   // get and set theme
   // useTheme();
@@ -36,27 +37,65 @@ function App() {
   //   return () => {};
   // }, []);
 
+  // return (
+  //   <>
+  //     <ThemeProvider theme={theme}>
+  //       <Router>
+  //         <div className="luckclover-app">
+  //           <Element name="scrollTop" />
+  //           <Navigation />
+
+  //           {/* routes */}
+  //           <React.Fragment>
+  //             <Suspense>
+  //               <Routes>
+  //                 <Route path="/" Component={() => <HomePage />} />
+  //                 <Route path="/IPA" element={<IPAPage />} />
+  //                 {/* Other routes go here */}
+  //               </Routes>
+  //             </Suspense>
+  //           </React.Fragment>
+
+  //           {/* common component */}
+  //           {/* <div id="_overlay"></div>
+  //             <Message />
+  //             <SpeedDials /> */}
+  //         </div>
+  //       </Router>
+  //     </ThemeProvider>
+  //   </>
+  // );
+
   return (
     <>
-      <ThemeProvider theme={theme}>
+      
+        <ThemeProvider theme={theme}>
           <Router>
             <div className="luckclover-app">
               <Element name="scrollTop" />
               <Navigation />
 
               {/* routes */}
-              <HomePage/>
+              <Suspense >
+                <Routes>
+                  {renderRoutes(routes, isAuth)}
+                  
+                  <Route>
+                    {/* <NotFoundPage /> */}
+                  </Route>
+                </Routes>
+              </Suspense>
 
               {/* common component */}
-              {/* <div id="_overlay"></div>
-              <Message />
-              <SpeedDials /> */}
+              <div id="_overlay"></div>
+              {/* <Message /> */}
+              {/* <SpeedDials /> */}
             </div>
           </Router>
         </ThemeProvider>
+      
     </>
   );
 }
 
 export default App;
-

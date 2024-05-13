@@ -6,7 +6,7 @@ function useTitle(title = 'Luckclover', isOverride = false) {
     if (isOverride) {
       document.title = title;
     } else {
-      document.title = title !== 'Luckclover' ? `${title} - Luckclover` : title;
+      document.title = title !== 'Luckclover' ? `${title}` : title;
     }
   }, []);
 

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { ROUTES } from '../constants';
 import HomePage from '../pages/Home';
+
+const IPAPage = React.lazy(() => import('../pages/IPA'));
+const CommunicationPhrase = React.lazy(() => import('../pages/CommunicationPhrase'));
 
 const routes = [
   {
@@ -9,6 +12,18 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <HomePage />,
+  },
+  {
+    path: ROUTES.IPA,
+    exact: true,
+    isProtect: false,
+    component: () => <IPAPage />,
+  },
+  {
+    path: ROUTES.COMMUNICATION_PHRASE,
+    exact: true,
+    isProtect: false,
+    component: () => <CommunicationPhrase />,
   },
 ];
 
@@ -23,7 +38,7 @@ const renderRoutes = (routes, isAuth = false) => {
         path={path}
         exact={exact}
         key={index}
-        component={componentRender}
+        Component={componentRender}
       />
     );
   });
