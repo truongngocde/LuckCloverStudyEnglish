@@ -11,6 +11,7 @@ const https = require('https');
 
 // import local file
 const { MAX } = require('./constant');
+// const corsConfig = require('./configs/corsConfig');
 const wordRouters = require('./routers/wordRouters');
 const sentenceRouters = require('./routers/sentenceRouters');
 const flashcardRouters = require('./routers/flashcardRouters');
@@ -21,6 +22,12 @@ const blogRouters = require('./routers/blogRouters');
 const app = express();
 const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || '8080');
+
+// ================== config ==================
+app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
+// app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
+app.use(cookieParser());
+app.use(cors());
 
 // ============= setup ==================
 app.use(express.static(path.join(__dirname, 'public')));
@@ -62,11 +69,7 @@ mongoose
     console.log(`Database connected successfully`);
   });
 
-// ================== config ==================
-// app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
-// app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
-// app.use(cookieParser());
-// app.use(cors(corsConfig));
+
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT} !!!`);
