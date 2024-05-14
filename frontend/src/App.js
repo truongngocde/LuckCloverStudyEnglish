@@ -22,8 +22,6 @@ function App() {
   // const dispatch = useDispatch();
   const { isAuth } = false;
 
-  console.log(process.env.REACT_APP_API_LOCAL_BASE_URL)
-
   // get and set theme
   // useTheme();
 
@@ -35,37 +33,7 @@ function App() {
   //   dispatch(getUserInfo());
   //   setLoading(false);
   //   return () => {};
-  // }, []);
-
-  // return (
-  //   <>
-  //     <ThemeProvider theme={theme}>
-  //       <Router>
-  //         <div className="luckclover-app">
-  //           <Element name="scrollTop" />
-  //           <Navigation />
-
-  //           {/* routes */}
-  //           <React.Fragment>
-  //             <Suspense>
-  //               <Routes>
-  //                 <Route path="/" Component={() => <HomePage />} />
-  //                 <Route path="/IPA" element={<IPAPage />} />
-  //                 {/* Other routes go here */}
-  //               </Routes>
-  //             </Suspense>
-  //           </React.Fragment>
-
-  //           {/* common component */}
-  //           {/* <div id="_overlay"></div>
-  //             <Message />
-  //             <SpeedDials /> */}
-  //         </div>
-  //       </Router>
-  //     </ThemeProvider>
-  //   </>
-  // );
-
+  // }, []); 
   return (
     <>
       

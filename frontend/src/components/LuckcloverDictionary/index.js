@@ -1,33 +1,51 @@
-import LoopIcon from '@mui/icons-material/Loop';
-import LuckcloverDictionarySkeleton from '../../components/LuckcloverDictionary/Skeleton';
-import InfiniteScroll from '../UI/InfiniteScroll';
+import LoopIcon from '@material-ui/icons/Loop';
+import AutoSearchInput from 'components/UI/AutoSearchInput';
+import InfiniteScroll from 'components/UI/InfiniteScroll';
+import WordSortModal from 'components/UI/WordSortModal';
 import PropTypes from 'prop-types';
 import React from 'react';
-import CommunicationPhraseItem from './Item';
-import SentenceTopicSettingModal from './SettingModal';
+import LuckcloverDictionaryItemData from './Item/data';
+import DDSettingWordPack from './SettingWordPack';
+import LuckcloverDictionarySkeleton from './Skeleton';
 import useStyle from './style';
 
-function CommunicationPhrase({
-  isFirstLoad,
-  loading,
-  more,
+function LuckcloverDictionary({
   list,
+  loading,
   onLoadData,
-  onSelectTopic,
+  more,
+  isFirstLoad,
+  onSettingWordPack,
+  onSortTypeChange,
+  onSearchWord,
+  isTOEIC,
 }) {
   const classes = useStyle();
 
   return (
-    <div className={`${classes.root} dyno-container`}>
+    <div className={`${classes.root} luckclover-container`}>
       {/* title - menu */}
       <div className="flex-center-between">
-        <h1 className="dyno-title">1000+ Cụm từ giao tiếp</h1>
-        <SentenceTopicSettingModal onSelectTopic={onSelectTopic} />
+        <h1 className="luckclover-title">Từ điển Luckclovernary</h1>
+        <div>
+          <WordSortModal
+            onSelect={onSortTypeChange}
+            classNameIcon="luckclover-setting-icon mr-5"
+          />
+          {!isTOEIC && (
+            <DDSettingWordPack
+              onChoose={onSettingWordPack}
+              classNameIcon="luckclover-setting-icon"
+            />
+          )}
+        </div>
       </div>
-      <div className="dyno-break"></div>
+      <div className="luckclover-break"></div>
 
       {/* list content */}
       <div className={classes.contentWrap}>
+        <AutoSearchInput disabled={loading} onSearch={onSearchWord} />
+
         <div className={`${classes.listWrap} w-100`}>
           <ul id="dictionaryId" className={`${classes.list} flex-col w-100`}>
             <>
@@ -38,10 +56,9 @@ function CommunicationPhrase({
                   {list && list.length > 0 ? (
                     <>
                       {/* render list */}
-                      
                       {list.map((item, index) => (
                         <li className={classes.listItem} key={index}>
-                          <CommunicationPhraseItem {...item} />
+                          <LuckcloverDictionaryItemData {...item} />
                         </li>
                       ))}
 
@@ -59,7 +76,7 @@ function CommunicationPhrase({
                   ) : (
                     // empty list
                     <h3 className="notfound-title h-100 flex-center t-center">
-                      Không tìm thấy cụm từ nào trong từ điển
+                      Không tìm thấy từ nào trong từ điển
                     </h3>
                   )}
                 </>
@@ -72,22 +89,28 @@ function CommunicationPhrase({
   );
 }
 
-CommunicationPhrase.propTypes = {
+LuckcloverDictionary.propTypes = {
   isFirstLoad: PropTypes.bool,
+  isTOEIC: PropTypes.bool,
   list: PropTypes.array,
   loading: PropTypes.bool,
   more: PropTypes.bool,
   onLoadData: PropTypes.func,
-  onSelectTopic: PropTypes.func,
+  onSearchWord: PropTypes.func,
+  onSettingWordPack: PropTypes.func,
+  onSortTypeChange: PropTypes.func,
 };
 
-CommunicationPhrase.defaultProps = {
-  more: false,
-  loading: false,
-  isFirstLoad: false,
+LuckcloverDictionary.defaultProps = {
   list: [],
+  loading: false,
+  more: true,
+  isFirstLoad: true,
+  isTOEIC: false,
   onLoadData: function () {},
-  onSelectTopic: function () {},
+  onSearchWord: function () {},
+  onSettingWordPack: function () {},
+  onSortTypeChange: function () {},
 };
 
-export default CommunicationPhrase;
+export default LuckcloverDictionary;

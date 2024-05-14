@@ -90,9 +90,11 @@ const FEATURE_LIST = [
   },
 ];
 
+
 function HomePage() {
   useTitle('LuckcloverEnglish - Ứng dụng học tiếng Anh miễn phí');
   useScrollTop();
+  
 
   return (
     <div className="container my-10">

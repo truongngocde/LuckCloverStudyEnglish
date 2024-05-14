@@ -1,7 +1,7 @@
 import sentenceApi from '../../apis/sentenceApi';
 import { equalArray } from '../../helpers';
 import React, { useEffect, useRef, useState } from 'react';
-import CommunicationPhrase from '../CommunicationPhrase/index';
+import CommunicationPhrase from '../CommunicationPhrase';
 
 const perPage = 20;
 
@@ -31,7 +31,7 @@ function CommunicationPhraseData() {
     setMore(true);
     setList([]);
     setTopicList([...topics]);
-    totalPage.current = 0; 
+    totalPage.current = 0;
   };
 
   // get total sentence
