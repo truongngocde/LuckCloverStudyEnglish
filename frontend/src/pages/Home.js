@@ -72,7 +72,7 @@ const FEATURE_LIST = [
     title: 'Thử thách',
     imgUrl: challengeIcon,
     subTitle:
-      'Ôn luyện kiến thức hiệu quả và đỡ nhàm chán hơn qua việc chơi game cùng Luckclover nhé',
+      'Ôn luyện kiến thức hiệu quả cùng Luckclover nhé',
     to: ROUTES.CHALLENGES.HOME,
   },
   {

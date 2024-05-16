@@ -4,16 +4,16 @@ exports.HIGHTSCORE_NAME = {
         name: 'top-coin',
         unit: 'coin',
     },
-    CORRECT_GAME_RIGHT: {
+    CORRECT_CHALLENGE_RIGHT: {
         name: 'correct-right',
         unit: 'câu',
     },
-    CORRECT_GAME_RIGHT_CONSECUTIVE: {
+    CORRECT_CHALLENGE_RIGHT_CONSECUTIVE: {
         name: 'correct-right-consecutive',
         unit: 'câu',
     },
-    FAST_GAME: {
-        name: 'fastest-game',
+    FAST_CHALLENGE: {
+        name: 'fastest-challenge',
         unit: 'điểm',
     }
 };

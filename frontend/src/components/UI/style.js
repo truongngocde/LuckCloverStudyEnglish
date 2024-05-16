@@ -1,4 +1,4 @@
-export const gameBoxStyle = (theme) => ({
+export const challengBoxStyle = (theme) => ({
     root: {
       height: '100%',
       display: 'grid',

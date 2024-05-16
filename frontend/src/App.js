@@ -21,19 +21,6 @@ function App() {
   const [loading, setLoading] = useState(true);
   // const dispatch = useDispatch();
   const { isAuth } = false;
-
-  // get and set theme
-  // useTheme();
-
-  // get window voice and set custom voice
-  // useVoice();
-
-  // get user info
-  // useEffect(() => {
-  //   dispatch(getUserInfo());
-  //   setLoading(false);
-  //   return () => {};
-  // }, []); 
   return (
     <>
       

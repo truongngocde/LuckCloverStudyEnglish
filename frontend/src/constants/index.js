@@ -12,7 +12,7 @@ export const COLOR_VAR_KEYS = [
 ];
 
 export const COINS = {
-  CORRECT_GAME_PER_QUES: 10,
+  CORRECT_CHALLENGE_PER_QUES: 10,
 };
 
 export const DEFAULTS = {
@@ -75,7 +75,7 @@ export const ROUTES = {
     CORRECT_WORD_ADV: '/challenges/correct-word-advance',
     MILLIONAIRE: '/challenges/who-is-a-millionaire',
     JIGSAW: '/challenges/jigsaw-puzzle',
-    FAST_GAME: '/challenges/fast-word',
+    FAST_WORD: '/challenges/fast-word',
     WORD_MATCHING: '/challenges/word-match',
     GRAMMARLY: '/challenges/grammarly',
     VIP: '/challenges/vip',

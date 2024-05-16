@@ -71,7 +71,7 @@ const NAV_SEARCH_DATA = [
   },
   {
     title: 'học cùng bạn bè',
-    searchKey: 'learn with friend my friends connect game',
+    searchKey: 'learn with friend my friends connect word',
     to: '/',
   },
 ];

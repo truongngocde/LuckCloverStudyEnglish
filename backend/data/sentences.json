@@ -18,6 +18,86 @@
       "note": "Short but meaningful.",
       "topics": ["short", "concise"],
       "isChecked": false
+    },
+    {
+      "sentence": "This is a sample sentence.",
+      "mean": "Đây là một câu mẫu.",
+      "note": "This is a note related to the sample sentence.",
+      "topics": ["sample", "example"],
+      "isChecked": false
+    },
+    {
+      "sentence": "Another example sentence.",
+      "mean": "Một câu ví dụ khác.",
+      "topics": ["example", "illustration"],
+      "isChecked": true
+    },
+    {
+      "sentence": "A short sentence.",
+      "mean": "Một câu ngắn.",
+      "note": "Short but meaningful.",
+      "topics": ["short", "concise"],
+      "isChecked": false
+    },
+    {
+      "sentence": "This is a sample sentence.",
+      "mean": "Đây là một câu mẫu.",
+      "note": "This is a note related to the sample sentence.",
+      "topics": ["sample", "example"],
+      "isChecked": false
+    },
+    {
+      "sentence": "Another example sentence.",
+      "mean": "Một câu ví dụ khác.",
+      "topics": ["example", "illustration"],
+      "isChecked": true
+    },
+    {
+      "sentence": "A short sentence.",
+      "mean": "Một câu ngắn.",
+      "note": "Short but meaningful.",
+      "topics": ["short", "concise"],
+      "isChecked": false
+    },
+    {
+      "sentence": "This is a sample sentence.",
+      "mean": "Đây là một câu mẫu.",
+      "note": "This is a note related to the sample sentence.",
+      "topics": ["sample", "example"],
+      "isChecked": false
+    },
+    {
+      "sentence": "Another example sentence.",
+      "mean": "Một câu ví dụ khác.",
+      "topics": ["example", "illustration"],
+      "isChecked": true
+    },
+    {
+      "sentence": "A short sentence.",
+      "mean": "Một câu ngắn.",
+      "note": "Short but meaningful.",
+      "topics": ["short", "concise"],
+      "isChecked": false
+    },
+    {
+      "sentence": "This is a sample sentence.",
+      "mean": "Đây là một câu mẫu.",
+      "note": "This is a note related to the sample sentence.",
+      "topics": ["sample", "example"],
+      "isChecked": false
+    },
+    {
+      "sentence": "Another example sentence.",
+      "mean": "Một câu ví dụ khác.",
+      "topics": ["example", "illustration"],
+      "isChecked": true
+    },
+    {
+      "sentence": "A short sentence.",
+      "mean": "Một câu ngắn.",
+      "note": "Short but meaningful.",
+      "topics": ["short", "concise"],
+      "isChecked": false
     }
   ]
   

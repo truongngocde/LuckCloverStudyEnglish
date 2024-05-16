@@ -10,12 +10,13 @@ import useStyle from './style';
 import React, { useState, useEffect } from 'react';
 import sentenceApi from '../../apis/sentenceApi';
 
-
 const SentenceComponent = () => {
   const [totalSentences, setTotalSentences] = useState(null);
   const [sentenceList, setSentenceList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const classes = useStyle();
 
   useEffect(() => {
     const fetchTotalSentences = async () => {
@@ -53,19 +54,37 @@ const SentenceComponent = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
   return (
-    <div>
-      <h1>API Data</h1>
-      <h2>Total Sentences</h2>
-      <pre>{JSON.stringify(totalSentences, null, 2)}</pre>
-      <h2>Sentence List</h2>
+    <div className={`${classes.root} luckclover-container`}>
+      {/* title - menu */}
+      <div className="flex-center-between">
+        <h1 className="luckclover-title">1000+ Cụm từ giao tiếp</h1>
+        {/* <SentenceTopicSettingModal onSelectTopic={onSelectTopic} /> */}
+      </div>
+      <div className="luckclover-break"></div>
+
+      {/* list content */}
+      <div className={classes.contentWrap}>
+        <div className={`${classes.listWrap} w-100`}>
+          <ul id="dictionaryId" className={`${classes.list} flex-col w-100`}>
+            <>
+              {/* render list */}
+              {sentenceList.map((item, index) => (
+                <li className={classes.listItem} key={index}>
+                  <CommunicationPhraseItem {...item} />
+                </li>
+              ))}
+
+              {/* infinite scrolling */}
+            </>
+          </ul>
+        </div>
+      </div>
       <ul>
-        {sentenceList.map((sentence, index) => (
-          <li key={index}>
-            <p><strong>Sentence:</strong> {sentence.sentence}</p>
-            <p><strong>Mean:</strong> {sentence.mean}</p>
-            {sentence.note && <p><strong>Note:</strong> {sentence.note}</p>}
+        {/* render list */}
+        {sentenceList.map((item, index) => (
+          <li className={classes.listItem} key={index}>
+            <CommunicationPhraseItem {...item} />
           </li>
         ))}
       </ul>
@@ -73,6 +92,4 @@ const SentenceComponent = () => {
   );
 };
 
-
 export default SentenceComponent;
-
