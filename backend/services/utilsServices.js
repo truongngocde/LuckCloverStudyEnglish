@@ -35,15 +35,18 @@ exports.isExistSentence = async (sentence = '') => {
   return await Sentence.exists({ sentence: newRegex });
 };
 
-exports.getWorkPack = async (
+exports.getWordPack = async (
   packInfo = {},
   skip = 0,
   limit = 500,
+  select = '',
   sortType = null,
-  expandQuery = null
+  expandQuery = null,
 ) => {
   try {
     let query = convertPackInfoToQueryStr(packInfo);
+
+    // add expand query
     if (expandQuery && typeof expandQuery === 'object') {
       Object.assign(query, expandQuery);
     }
@@ -55,15 +58,6 @@ exports.getWorkPack = async (
       .select(select);
 
     return packList;
-  } catch (error) {
-    throw error;
-  }
-};
-
-exports.countWordPack = async (packInfo = {}) => {
-  try {
-    let query = convertPackInfoToQueryStr(packInfo);
-    return await Word.countDocuments(query);
   } catch (error) {
     throw error;
   }

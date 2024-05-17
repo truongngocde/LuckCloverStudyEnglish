@@ -10,7 +10,7 @@ exports.addTopicsQuery = (topics, query) => {
     return query;
 }
 
-exports.convertPackInfoQueryStr = (packInfo) => {
+exports.convertPackInfoToQueryStr = (packInfo) => {
     const { topics, ...restPackInfo } = packInfo;
     const topicList = typeof topics === 'string' ? JSON.parse(topics) : topics;
 

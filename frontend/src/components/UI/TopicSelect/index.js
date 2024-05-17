@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Tag from '../Tag';
-import { TOPICS } from '../../../constant/topics';
+import { TOPICS } from '../../../constants/topics';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import useStyle from './style';

@@ -5,7 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Grid } from '@mui/material';
 import SelectCustom from '../../UI/WorkPack';
-import { WORD_LEVELS, WORD_SPECIALTY, WORD_TYPES } from '../../../constant';
+import { WORD_LEVELS, WORD_SPECIALTY, WORD_TYPES } from '../../../constants';
 import { TOPIC_OPTIONS } from '../../../constants/topics';
 import PropTypes from 'prop-types';
 import React, { useRef } from 'react';

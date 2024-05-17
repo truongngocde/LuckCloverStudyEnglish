@@ -6,7 +6,7 @@ import HomePage from '../pages/Home';
 const IPAPage = React.lazy(() => import('../pages/IPA'));
 const CommunicationPhrase = React.lazy(() => import('../pages/CommunicationPhrase'));
 const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
-
+const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
 const routes = [
   {
     path: ROUTES.HOME,
@@ -36,7 +36,7 @@ const routes = [
     path: ROUTES.CHALLENGES.CORRECT_WORD,
     exact: true,
     isProtect: false,
-    // component: () => <CorrectWordPage />,
+    component: () => <CorrectWordPage />,
   },
   {
     path: ROUTES.CHALLENGES.WORD_MATCHING,
