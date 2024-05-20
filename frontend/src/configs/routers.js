@@ -5,6 +5,8 @@ import HomePage from '../pages/Home';
 
 const IPAPage = React.lazy(() => import('../pages/IPA'));
 const CommunicationPhrase = React.lazy(() => import('../pages/CommunicationPhrase'));
+const Flashcard = React.lazy(() => import('../pages/Flashcard'));
+
 const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
 const routes = [
@@ -25,6 +27,12 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <CommunicationPhrase />,
+  },
+  {
+    path: ROUTES.FLASHCARD,
+    exact: true,
+    isProtect: false,
+    component: () => <Flashcard />,
   },
   {
     path: ROUTES.CHALLENGES.HOME,

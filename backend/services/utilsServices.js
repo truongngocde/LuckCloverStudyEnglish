@@ -52,12 +52,21 @@ exports.getWordPack = async (
     }
 
     const packList = await Word.find(query)
-      .sort({ word: sortType })
+      //.sort({ word: sortType })
       .skip(skip)
       .limit(limit)
       .select(select);
 
     return packList;
+  } catch (error) {
+    throw error;
+  }
+};
+
+exports.countWordPack = async (packInfo = {}) => {
+  try {
+    let query = convertPackInfoToQueryStr(packInfo);
+    return await WordModel.countDocuments(query);
   } catch (error) {
     throw error;
   }
