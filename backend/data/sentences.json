@@ -1,0 +1,512 @@
+[
+  {
+    "sentence": "Hello! How are you?",
+    "mean": "Xin chào! Bạn có khỏe không?",
+    "note": "",
+    "topics": ["0"]
+  },
+  {
+    "sentence": "Good morning!",
+    "mean": "Chào buổi sáng!",
+    "note": "",
+    "topics": ["0"]
+  },
+  {
+    "sentence": "Good afternoon!",
+    "mean": "Chào buổi chiều!",
+    "note": "",
+    "topics": ["0"]
+  },
+  {
+    "sentence": "Good evening!",
+    "mean": "Chào buổi tối!",
+    "note": "",
+    "topics": ["0"]
+  },
+  {
+    "sentence": "Goodbye! See you again!",
+    "mean": "Tạm biệt! Hẹn gặp lại!",
+    "note": "",
+    "topics": ["0"]
+  },
+  {
+    "sentence": "I want to go to the airport.",
+    "mean": "Tôi muốn đi đến sân bay.",
+    "note": "",
+    "topics": ["1"]
+  },
+  {
+    "sentence": "Where is the train station?",
+    "mean": "Nhà ga ở đâu?",
+    "note": "",
+    "topics": ["1"]
+  },
+  {
+    "sentence": "Can I walk there?",
+    "mean": "Tôi có thể đi bộ đến đó không?",
+    "note": "",
+    "topics": ["1"]
+  },
+  {
+    "sentence": "Please give me a city map.",
+    "mean": "Làm ơn cho tôi bản đồ thành phố.",
+    "note": "",
+    "topics": ["1"]
+  },
+  {
+    "sentence": "Where is the nearest restaurant?",
+    "mean": "Nhà hàng gần nhất ở đâu?",
+    "note": "",
+    "topics": ["1"]
+  },
+  {
+    "sentence": "I need to exchange money.",
+    "mean": "Tôi cần đổi tiền.",
+    "note": "",
+    "topics": ["2"]
+  },
+  {
+    "sentence": "How much is it?",
+    "mean": "Bao nhiêu tiền?",
+    "note": "",
+    "topics": ["2"]
+  },
+  {
+    "sentence": "Can I pay by credit card?",
+    "mean": "Tôi có thể trả bằng thẻ tín dụng không?",
+    "note": "",
+    "topics": ["2"]
+  },
+  {
+    "sentence": "Please give me the receipt.",
+    "mean": "Làm ơn cho tôi hóa đơn.",
+    "note": "",
+    "topics": ["2"]
+  },
+  {
+    "sentence": "Here is your change.",
+    "mean": "Tiền lẻ của bạn đây.",
+    "note": "",
+    "topics": ["2"]
+  },
+  {
+    "sentence": "Where is the post office?",
+    "mean": "Bưu điện ở đâu?",
+    "note": "",
+    "topics": ["3"]
+  },
+  {
+    "sentence": "This is the bus station.",
+    "mean": "Đây là trạm xe buýt.",
+    "note": "",
+    "topics": ["3"]
+  },
+  {
+    "sentence": "Do you know where the public restroom is?",
+    "mean": "Bạn có biết nhà vệ sinh công cộng ở đâu không?",
+    "note": "",
+    "topics": ["3"]
+  },
+  {
+    "sentence": "Please show me the way to the hotel.",
+    "mean": "Làm ơn chỉ đường đến khách sạn.",
+    "note": "",
+    "topics": ["3"]
+  },
+  {
+    "sentence": "We are at the central square.",
+    "mean": "Chúng ta đang ở quảng trường trung tâm.",
+    "note": "",
+    "topics": ["3"]
+  },
+  {
+    "sentence": "What is the date today?",
+    "mean": "Hôm nay là ngày mấy?",
+    "note": "",
+    "topics": ["4"]
+  },
+  {
+    "sentence": "What time is it now?",
+    "mean": "Bây giờ là mấy giờ?",
+    "note": "",
+    "topics": ["4"]
+  },
+  {
+    "sentence": "Are you free this weekend?",
+    "mean": "Cuối tuần bạn có rảnh không?",
+    "note": "",
+    "topics": ["4"]
+  },
+  {
+    "sentence": "When is your birthday?",
+    "mean": "Sinh nhật của bạn là khi nào?",
+    "note": "",
+    "topics": ["4"]
+  },
+  {
+    "sentence": "We will meet on Saturday.",
+    "mean": "Chúng ta sẽ gặp nhau vào thứ bảy.",
+    "note": "",
+    "topics": ["4"]
+  },
+  {
+    "sentence": "Can I make a phone call?",
+    "mean": "Tôi có thể gọi điện thoại không?",
+    "note": "",
+    "topics": ["5"]
+  },
+  {
+    "sentence": "What is the Wi-Fi password?",
+    "mean": "Mật khẩu Wi-Fi là gì?",
+    "note": "",
+    "topics": ["5"]
+  },
+  {
+    "sentence": "I need to send an email.",
+    "mean": "Tôi cần gửi một email.",
+    "note": "",
+    "topics": ["5"]
+  },
+  {
+    "sentence": "Can you give me your phone number?",
+    "mean": "Bạn có thể cho tôi số điện thoại của bạn không?",
+    "note": "",
+    "topics": ["5"]
+  },
+  {
+    "sentence": "I can't connect to the Internet.",
+    "mean": "Tôi không thể kết nối Internet.",
+    "note": "",
+    "topics": ["5"]
+  },
+  {
+    "sentence": "I want to book a room.",
+    "mean": "Tôi muốn đặt một phòng.",
+    "note": "",
+    "topics": ["6"]
+  },
+  {
+    "sentence": "Does this room have air conditioning?",
+    "mean": "Phòng này có điều hòa không?",
+    "note": "",
+    "topics": ["6"]
+  },
+  {
+    "sentence": "Does the hotel offer free breakfast?",
+    "mean": "Khách sạn có bữa sáng miễn phí không?",
+    "note": "",
+    "topics": ["6"]
+  },
+  {
+    "sentence": "I need an extra pillow.",
+    "mean": "Tôi cần thêm một cái gối.",
+    "note": "",
+    "topics": ["6"]
+  },
+  {
+    "sentence": "When is the check-out time?",
+    "mean": "Khi nào phải trả phòng?",
+    "note": "",
+    "topics": ["6"]
+  },
+  {
+    "sentence": "I want to order food.",
+    "mean": "Tôi muốn gọi món ăn.",
+    "note": "",
+    "topics": ["7"]
+  },
+  {
+    "sentence": "Do you have a vegetarian menu?",
+    "mean": "Bạn có thực đơn cho người ăn chay không?",
+    "note": "",
+    "topics": ["7"]
+  },
+  {
+    "sentence": "Please give me a glass of water.",
+    "mean": "Xin cho tôi một ly nước.",
+    "note": "",
+    "topics": ["7"]
+  },
+  {
+    "sentence": "How much is this dish?",
+    "mean": "Món này bao nhiêu tiền?",
+    "note": "",
+    "topics": ["7"]
+  },
+  {
+    "sentence": "Where is my bill?",
+    "mean": "Hóa đơn của tôi đâu?",
+    "note": "",
+    "topics": ["7"]
+  },
+  {
+    "sentence": "What is your name?",
+    "mean": "Bạn tên là gì?",
+    "note": "",
+    "topics": ["8"]
+  },
+  {
+    "sentence": "Where are you from?",
+    "mean": "Bạn đến từ đâu?",
+    "note": "",
+    "topics": ["8"]
+  },
+  {
+    "sentence": "What do you like to do in your free time?",
+    "mean": "Bạn thích làm gì vào thời gian rảnh?",
+    "note": "",
+    "topics": ["8"]
+  },
+  {
+    "sentence": "Can we be friends on social media?",
+    "mean": "Chúng ta có thể kết bạn trên mạng xã hội không?",
+    "note": "",
+    "topics": ["8"]
+  },
+  {
+    "sentence": "Do you want to go for a coffee?",
+    "mean": "Bạn có muốn đi uống cà phê không?",
+    "note": "",
+    "topics": ["8"]
+  },
+  {
+    "sentence": "What kind of movies do you like?",
+    "mean": "Bạn thích loại phim nào?",
+    "note": "",
+    "topics": ["9"]
+  },
+  {
+    "sentence": "I like listening to music.",
+    "mean": "Tôi thích nghe nhạc.",
+    "note": "",
+    "topics": ["9"]
+  },
+  {
+    "sentence": "Is there any event this weekend?",
+    "mean": "Cuối tuần này có sự kiện gì không?",
+    "note": "",
+    "topics": ["9"]
+  },
+  {
+    "sentence": "Do you want to go to the movies?",
+    "mean": "Bạn có muốn đi xem phim không?",
+    "note": "",
+    "topics": ["9"]
+  },
+  {
+    "sentence": "Let's take a walk in the park.",
+    "mean": "Chúng ta hãy đi dạo công viên.",
+    "note": "",
+    "topics": ["9"]
+  },
+  {
+    "sentence": "I want to buy this.",
+    "mean": "Tôi muốn mua cái này.",
+    "note": "",
+    "topics": ["10"]
+  },
+  {
+    "sentence": "Do you have a discount?",
+    "mean": "Bạn có giảm giá không?",
+    "note": "",
+    "topics": ["10"]
+  },
+  {
+    "sentence": "What time does the store open?",
+    "mean": "Cửa hàng mở cửa lúc mấy giờ?",
+    "note": "",
+    "topics": ["10"]
+  },
+  {
+    "sentence": "I want to return this.",
+    "mean": "Tôi muốn trả lại cái này.",
+    "note": "",
+    "topics": ["10"]
+  },
+  {
+    "sentence": "Can you gift-wrap this for me?",
+    "mean": "Bạn có thể gói quà giúp tôi không?",
+    "note": "",
+    "topics": ["10"]
+  },
+  {
+    "sentence": "I don't understand.",
+    "mean": "Tôi không hiểu.",
+    "note": "",
+    "topics": ["11"]
+  },
+  {
+    "sentence": "Can you speak more slowly?",
+    "mean": "Bạn có thể nói chậm lại không?",
+    "note": "",
+    "topics": ["11"]
+  },
+  {
+    "sentence": "Please repeat.",
+    "mean": "Làm ơn lặp lại.",
+    "note": "",
+    "topics": ["11"]
+  },
+  {
+    "sentence": "I need an interpreter.",
+    "mean": "Tôi cần một phiên dịch viên.",
+    "note": "",
+    "topics": ["11"]
+  },
+  {
+    "sentence": "Can you write it down?",
+    "mean": "Bạn có thể viết ra không?",
+    "note": "",
+    "topics": ["11"]
+  },
+  {
+    "sentence": "Please call emergency services!",
+    "mean": "Làm ơn gọi cấp cứu!",
+    "note": "",
+    "topics": ["12"]
+  },
+  {
+    "sentence": "I need to see a doctor.",
+    "mean": "Tôi cần gặp bác sĩ.",
+    "note": "",
+    "topics": ["12"]
+  },
+  {
+    "sentence": "I lost my passport.",
+    "mean": "Tôi bị mất hộ chiếu.",
+    "note": "",
+    "topics": ["12"]
+  },
+  {
+    "sentence": "I have pain here.",
+    "mean": "Tôi bị đau ở đây.",
+    "note": "",
+    "topics": ["12"]
+  },
+  {
+    "sentence": "Please help me!",
+    "mean": "Làm ơn giúp tôi!",
+    "note": "",
+    "topics": ["12"]
+  },
+  {
+    "sentence": "Do you have any questions?",
+    "mean": "Bạn có câu hỏi nào không?",
+    "note": "",
+    "topics": ["13"]
+  },
+  {
+    "sentence": "What is this?",
+    "mean": "Đây là gì?",
+    "note": "",
+    "topics": ["13"]
+  },
+  {
+    "sentence": "Can you help me?",
+    "mean": "Bạn có thể giúp tôi không?",
+    "note": "",
+    "topics": ["13"]
+  },
+  {
+    "sentence": "Why is that?",
+    "mean": "Tại sao lại như vậy?",
+    "note": "",
+    "topics": ["13"]
+  },
+  {
+    "sentence": "What does this mean?",
+    "mean": "Điều này có nghĩa là gì?",
+    "note": "",
+    "topics": ["13"]
+  },
+  {
+    "sentence": "I need a job.",
+    "mean": "Tôi cần một công việc.",
+    "note": "",
+    "topics": ["14"]
+  },
+  {
+    "sentence": "Do you know any company that is hiring?",
+    "mean": "Bạn có biết công ty nào đang tuyển không?",
+    "note": "",
+    "topics": ["14"]
+  },
+  {
+    "sentence": "Please give me a job application.",
+    "mean": "Làm ơn cho tôi đơn xin việc.",
+    "note": "",
+    "topics": ["14"]
+  },
+  {
+    "sentence": "When can I start working?",
+    "mean": "Khi nào tôi có thể bắt đầu làm việc?",
+    "note": "",
+    "topics": ["14"]
+  },
+  {
+    "sentence": "What is the salary like?",
+    "mean": "Mức lương như thế nào?",
+    "note": "",
+    "topics": ["14"]
+  },
+  {
+    "sentence": "How is the weather today?",
+    "mean": "Thời tiết hôm nay thế nào?",
+    "note": "",
+    "topics": ["15"]
+  },
+  {
+    "sentence": "It's raining.",
+    "mean": "Trời đang mưa.",
+    "note": "",
+    "topics": ["15"]
+  },
+  {
+    "sentence": "What is today's temperature?",
+    "mean": "Nhiệt độ hôm nay là bao nhiêu?",
+    "note": "",
+    "topics": ["15"]
+  },
+  {
+    "sentence": "It will be sunny this weekend.",
+    "mean": "Cuối tuần này trời sẽ nắng.",
+    "note": "",
+    "topics": ["15"]
+  },
+  {
+    "sentence": "Did you hear the weather forecast?",
+    "mean": "Bạn có nghe dự báo thời tiết không?",
+    "note": "",
+    "topics": ["15"]
+  },
+  {
+    "sentence": "That's very interesting.",
+    "mean": "Điều đó rất thú vị.",
+    "note": "",
+    "topics": ["16"]
+  },
+  {
+    "sentence": "I'm not sure.",
+    "mean": "Tôi không chắc.",
+    "note": "",
+    "topics": ["16"]
+  },
+  {
+    "sentence": "Please give me more information.",
+    "mean": "Làm ơn cho tôi biết thêm thông tin.",
+    "note": "",
+    "topics": ["16"]
+  },
+  {
+    "sentence": "I need to think about that.",
+    "mean": "Tôi cần nghĩ về điều đó.",
+    "note": "",
+    "topics": ["16"]
+  },
+  {
+    "sentence": "Let's get started.",
+    "mean": "Chúng ta hãy bắt đầu.",
+    "note": "",
+    "topics": ["16"]
+  }
+]
