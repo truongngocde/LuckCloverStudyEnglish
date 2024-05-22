@@ -12,7 +12,7 @@ function GrammarListBoxData(props) {
       }
       const apiRes = await blogApi.getBlogHtml(_id);
       if (apiRes.status === 200) {
-        setBlogHtml(apiRes.data?.blogHtml);
+        setBlogHtml(apiRes.data?.blogHtml.html);
       }
     } catch (error) {}
   };

@@ -39,7 +39,7 @@ const FEATURE_LIST = [
     to: ROUTES.FLASHCARD,
   },
   {
-    title: 'Từ điển trong LuckcloverEnglish',
+    title: 'Từ điển',
     subTitle: 'Danh sách từ vựng được phân loại theo cấp độ, loại từ, ...',
     imgUrl: dictionaryIcon,
     to: ROUTES.LUCKCLOVER_DICTIONARY,

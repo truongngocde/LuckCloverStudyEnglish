@@ -26,7 +26,7 @@ function LuckcloverDictionary({
     <div className={`${classes.root} luckclover-container`}>
       {/* title - menu */}
       <div className="flex-center-between">
-        <h1 className="luckclover-title">Từ điển Luckclovernary</h1>
+        <h1 className="luckclover-title">Từ điển</h1>
         <div>
           <WordSortModal
             onSelect={onSortTypeChange}

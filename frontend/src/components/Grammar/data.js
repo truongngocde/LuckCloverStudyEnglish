@@ -16,7 +16,7 @@ function GrammarData() {
       try {
         const apiRes = await blogApi.getBlogList();
         if (apiRes.status === 200 && isSub) {
-          const { blogList = [] } = apiRes.data;
+          const blogList = apiRes.data.blogs;
           setLoading(false);
           setList(blogList);
         }

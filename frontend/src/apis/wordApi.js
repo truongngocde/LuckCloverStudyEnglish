@@ -1,35 +1,35 @@
-import axiosClient from './axiosClient';
+const axios = require('axios')
 
 const URL = '/words';
 
 const wordApi = {
   postContributeWord: (wordInfor) => {
-    return axiosClient.post(`${URL}/add-word`, { ...wordInfor });
+    return axios.post(`${URL}/add-word`, { ...wordInfor });
   },
 
   getCheckWordExistence: (word, type) => {
-    return axiosClient.get(`${URL}/exist`, { params: { word, type } });
+    return axios.get(`${URL}/exist`, { params: { word, type } });
   },
 
   // get word, type, phonetic, mean
   getWordList: (page = 1, perPage = 8, packInfo, sortType = 'rand') => {
-    return axiosClient.get(`${URL}/pack`, {
+    return axios.get(`${URL}/pack`, {
       params: { page, perPage, packInfo: JSON.stringify(packInfo), sortType },
     });
   },
 
   getSearchWord: (word = '', isCompact = false) => {
-    return axiosClient.get(`${URL}/search-word`, {
+    return axios.get(`${URL}/search-word`, {
       params: { word, isCompact },
     });
   },
 
   getWordDetails: (word = '') => {
-    return axiosClient.get(`${URL}/word-details`, { params: { word } });
+    return axios.get(`${URL}/word-details`, { params: { word } });
   },
 
   getUserFavoriteList: (page = 0, perPage = 20, sortType = 'rand') => {
-    return axiosClient.get(`${URL}/favorite-list`, {
+    return axios.get(`${URL}/favorite-list`, {
       params: { page, perPage, sortType },
     });
   },

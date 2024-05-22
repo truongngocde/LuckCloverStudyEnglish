@@ -35,12 +35,12 @@ exports.isExistSentence = async (sentence = '') => {
   return await Sentence.exists({ sentence: newRegex });
 };
 
-exports.getWordPack = async (
+exports.getWordPackService = async (
   packInfo = {},
   skip = 0,
   limit = 500,
   select = '',
-  sortType = null,
+  //sortType = null,
   expandQuery = null,
 ) => {
   try {
@@ -52,7 +52,7 @@ exports.getWordPack = async (
     }
 
     const packList = await Word.find(query)
-      .sort({word: sortType})
+      //.sort({word: sortType})
       .skip(skip)
       .limit(limit)
       .select(select);
@@ -66,7 +66,7 @@ exports.getWordPack = async (
 exports.countWordPack = async (packInfo = {}) => {
   try {
     let query = convertPackInfoToQueryStr(packInfo);
-    return await WordModel.countDocuments(query);
+    return await Word.countDocuments(query);
   } catch (error) {
     throw error;
   }

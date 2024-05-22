@@ -9,6 +9,18 @@ const morgan = require('morgan');
 const path = require('path');
 const https = require('https');
 
+// ============== set port ==============
+const app = express();
+const normalizePort = (port) => parseInt(port, 10);
+const PORT = normalizePort(process.env.PORT || '8080');
+
+// ================== config ==================
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors());
+
 // import local file
 const { MAX } = require('./constant');
 const corsConfig = require('./configs/corsConfig');
@@ -18,11 +30,6 @@ const flashcardRouters = require('./routers/flashcardRouters');
 const challengeRoters = require('./routers/challengeRouters');
 const blogRouters = require('./routers/blogRouters');
 const accountRouters = require('./routers/accountRouters');
-// ============== set port ==============
-const app = express();
-const normalizePort = (port) => parseInt(port, 10);
-const PORT = normalizePort(process.env.PORT || '8080');
-
 
 
 // =========== Connect mongodb with mongoose =========
@@ -57,11 +64,7 @@ if (!dev) {
   app.use(morgan('dev'));
 }
 
-// ================== config ==================
-app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
-app.use(express.urlencoded({ limit: MAX.SIZE_JSON_REQUEST }));
-app.use(cookieParser());
-app.use(cors());
+
 
 
 app.listen(PORT, () => {
