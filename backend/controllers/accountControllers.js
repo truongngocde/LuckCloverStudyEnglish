@@ -296,7 +296,7 @@ exports.putUpdateProfile = async (req, res, next) => {
 
 exports.getUserInfo = async (req, res) => {
   try {
-    const { isAuth = false } = res.locals;
+    const { isAuth } = res.locals;
     if (!isAuth) {
       return res.status(401).json({ message: 'Failed' });
     }

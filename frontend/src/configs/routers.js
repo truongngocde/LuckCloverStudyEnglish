@@ -3,6 +3,9 @@ import { Route } from 'react-router';
 import { ROUTES } from '../constants';
 import HomePage from '../pages/Home';
 
+const Register = React.lazy(() => import('../pages/Register'))
+const Login = React.lazy(() => import('../pages/Login'))
+
 const IPAPage = React.lazy(() => import('../pages/IPA'));
 const CommunicationPhrase = React.lazy(() => import('../pages/CommunicationPhrase'));
 const Flashcard = React.lazy(() => import('../pages/Flashcard'));
@@ -18,6 +21,18 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <HomePage />,
+  },
+  {
+    path: ROUTES.REGISTER,
+    exact: true,
+    isProtect: false,
+    component: () => <Register />,
+  },
+  {
+    path: ROUTES.LOGIN,
+    exact: true,
+    isProtect: false,
+    component: () => <Login />,
   },
   {
     path: ROUTES.IPA,
