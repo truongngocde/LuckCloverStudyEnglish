@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
-const { JWT_EXPRIRES_TIME } = require('../constant');
+const { JWT_EXPIRES_TIME } = require('../constant');
 
-const encodedToken = async (secretkey, user, expire = JWT_EXPRIRES_TIME) => {
+const encodedToken = async (secretkey, user, expire = JWT_EXPIRES_TIME) => {
     return await jwt.sign(
         {
             iss: process.env.JWT_ISS,

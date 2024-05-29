@@ -1,6 +1,6 @@
 const express = require('express');
 const wordControllers = require('../controllers/wordControllers');
-const { jwtAuth } = require('../middlewares/authMiddlewares');
+const { jwtAuthentication } = require('../middlewares/authMiddlewares');
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.get('/exist', wordControllers.getCheckWordExist);
 router.get('/search-word', wordControllers.getSearchWord)
 router.get('/word-detail', wordControllers.getWordDetails);
 router.get('/pack', wordControllers.getWordPack)
-router.get('/favorite-list', jwtAuth, wordControllers.getUserFavoriteList);
+router.get('/favorite-list', wordControllers.getUserFavoriteList);
 
 
 

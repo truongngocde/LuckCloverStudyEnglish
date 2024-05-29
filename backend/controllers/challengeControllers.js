@@ -10,6 +10,10 @@ exports.getWordPackCorrectWord = async (req, res, next) => {
     nQuestion = parseInt(nQuestion);
     if (nQuestion > MAX.LEN_WORD_PACK) nQuestion = MAX.LEN_WORD_PACK;
 
+    if (packInfo.topics) {
+      packInfo.topics = JSON.parse(packInfo.topics);
+    }
+
     const packages = await getWordPack(
       packInfo,
       0,

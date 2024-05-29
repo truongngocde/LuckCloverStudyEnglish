@@ -1,4 +1,4 @@
-const { getWordPack: serviceGetWordPack, } = require('../services/utilsServices');
+const { getWordPackSevice } = require('../services/utilsServices');
 const { countWordPack } = require('../services/utilsServices');
 
 exports.getWordPack = async (req, res, next) => {
@@ -8,7 +8,7 @@ exports.getWordPack = async (req, res, next) => {
         const perPageInt = parseInt(perPage);
         const skip = (pageInt - 1) * perPageInt;
 
-        const packList = await serviceGetWordPack(
+        const packList = await getWordPackSevice(
             JSON.parse(packInfo),
             skip,
             perPageInt,

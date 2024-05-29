@@ -18,8 +18,8 @@ exports.getBlogHtml = async (req, res, next) => {
         message: 'id không hợp lệ !',
       });
     }
-    const { blogHtmls = '' } = await Blog.findById(_id).select('-_id html');
-    return res.status(200).json({ blogHtmls });
+    const blogHtml = await Blog.findById(_id).select('-_id html');
+    return res.status(200).json({ blogHtml });
   } catch (error) {
     console.error(' ERROR: ', error);
     return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });

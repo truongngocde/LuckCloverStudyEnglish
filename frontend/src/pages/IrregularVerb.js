@@ -1,4 +1,4 @@
-import IrregularVerb from 'components/IrregularVerb';
+import IrregularVerb from '../components/IrregularVerb';
 import useTitle from '../hooks/useTitle';
 import React from 'react';
 
