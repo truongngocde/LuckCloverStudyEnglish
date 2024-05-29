@@ -1,9 +1,9 @@
 const express = require('express');
-const highscoreControllers = require('../controllers/highscoreControllers');
+const flashcardControllers = require('../controllers/flashcardControllers');
 
 const router = express.Router();
 
-router.put('update', highscoreControllers.putUpdateHighScore);
-router.get('/leaderboard', highscoreControllers.getLeaderboard);
+router.get('/word-pack', flashcardControllers.getWordPack);
+router.get('/word-pack/total', flashcardControllers.getTotalWorkPack)
 
 module.exports = router;

@@ -1,4 +1,4 @@
-const { getWordPackSevice } = require('../services/utilsServices');
+const { getWordPackService } = require('../services/utilsServices');
 const { countWordPack } = require('../services/utilsServices');
 
 exports.getWordPack = async (req, res, next) => {
@@ -8,20 +8,21 @@ exports.getWordPack = async (req, res, next) => {
         const perPageInt = parseInt(perPage);
         const skip = (pageInt - 1) * perPageInt;
 
-        const packList = await getWordPackSevice(
+        // Simplified service call
+        const packList = await getWordPackService(
             JSON.parse(packInfo),
             skip,
             perPageInt,
-            '-_id type word mean level phonetic examples picture',
-            null,
-            { $and: [{ picture: { $ne: null } }, { picture: { $ne: '' } }] },
+            '-_id type word mean level phonetic examples picture'
         );
 
         return res.status(200).json({ packList });
     } catch (error) {
+        console.error('Error in getWordPack:', error);
         return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
     }
-}
+};
+
 
 exports.getTotalWorkPack = async (req, res, next) => {
     try {

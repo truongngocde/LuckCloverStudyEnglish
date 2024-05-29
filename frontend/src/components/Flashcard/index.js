@@ -5,7 +5,7 @@ import CarouselIcon from '@mui/icons-material/ViewCarousel';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import TooltipCustom from '../UI/InputCustom';
+// import TooltipCustom from '../UI/InputCustom';
 import WordPack from '../UI/WorkPack';
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
@@ -64,16 +64,16 @@ function Flashcard({
             )}
           </Tooltip>
 
-          <Tooltip title="Cài đặt gói từ vựng" placement="bottom">
+          {/* <Tooltip title="Cài đặt gói từ vựng" placement="bottom">
             <SettingsIcon
               className={classes.icon}
               onClick={() => setOpenWordPack(true)}
             />
-          </Tooltip>
+          </Tooltip> */}
 
-          <TooltipCustom title={tutorial} placement="bottom">
+          {/* <TooltipCustom title={tutorial} placement="bottom">
             <HelpIcon className={classes.icon} />
-          </TooltipCustom>
+          </TooltipCustom> */}
         </div>
       </div>
       <div className="dyno-break" />
