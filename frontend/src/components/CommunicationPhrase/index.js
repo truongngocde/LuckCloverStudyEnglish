@@ -1,5 +1,5 @@
 import LoopIcon from '@mui/icons-material/Loop';
-import LuckcloverDictionarySkeleton from '../../components/LuckcloverDictionary/Skeleton';
+import DictionarySkeleton from '../../components/Dictionary/Skeleton';
 import InfiniteScroll from '../UI/InfiniteScroll';
 import PropTypes from 'prop-types';
 // import React from 'react';

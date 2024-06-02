@@ -5,7 +5,7 @@ import CarouselIcon from '@mui/icons-material/ViewCarousel';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-// import TooltipCustom from '../UI/InputCustom';
+import TooltipCustom from '../UI/InputCustom';
 import WordPack from '../UI/WorkPack';
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
@@ -14,8 +14,7 @@ import SlideShow from './SlideShow';
 import useStyle from './style';
 
 const perPage = 7;
-const tutorial =
-  'Có 2 chế độ xem là gallery và slide. Bấm vào biểu tượng mắt để bật tắt nghĩa của từ.';
+const tutorial = 'Có 2 chế độ xem là gallery và slide. Bấm vào biểu tượng mắt để bật tắt nghĩa của từ.';
 
 function Flashcard({
   list,
@@ -34,7 +33,7 @@ function Flashcard({
   return (
     <div className="container my-10">
       <div className="flex-center-between">
-        <h1 className="dyno-title">Flashcard</h1>
+        <h1 className="luckclover-title">Flashcard</h1>
         <div className={classes.iconWrap}>
           <Tooltip title="Chế độ bộ sưu tập" placement="bottom">
             <CollectionsIcon
@@ -69,14 +68,14 @@ function Flashcard({
               className={classes.icon}
               onClick={() => setOpenWordPack(true)}
             />
-          </Tooltip> */}
+          </Tooltip>
 
-          {/* <TooltipCustom title={tutorial} placement="bottom">
+          <TooltipCustom title={tutorial} placement="bottom">
             <HelpIcon className={classes.icon} />
           </TooltipCustom> */}
         </div>
       </div>
-      <div className="dyno-break" />
+      <div className="luckclover-break" />
 
       {openWordPack && (
         <WordPack

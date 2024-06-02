@@ -40,7 +40,7 @@ exports.getWordPackService = async (
   skip = 0,
   limit = 500,
   select = '',
-  //sortType = null,
+  // sortType = null,
   expandQuery = null,
 ) => {
   try {
@@ -52,7 +52,7 @@ exports.getWordPackService = async (
     }
 
     const packList = await Word.find(query)
-      //.sort({word: sortType})
+      // .sort({ word: sortType })
       .skip(skip)
       .limit(limit)
       .select(select);

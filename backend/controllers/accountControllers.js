@@ -227,7 +227,7 @@ exports.putToggleFavorite = async (req, res) => {
       return res.status(409).json({ message: 'failed' });
     }
 
-    console.log(updateStatus);
+    
   } catch (error) {
     console.error('PUT TOGGLE FAVORITE ERROR: ', error);
     return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });

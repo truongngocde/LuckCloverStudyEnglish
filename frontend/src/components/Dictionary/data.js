@@ -5,7 +5,7 @@ import { TOEIC_KEY } from '../../constants/topics';
 import { equalArray } from '../../helpers';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
-import Dictionary from '.';
+import Dictionary from './index';
 
 const perPage = 20;
 
@@ -18,6 +18,15 @@ function DictionaryData({ isTOEIC }) {
     specialty: '-1',
     topics: isTOEIC ? [TOEIC_KEY] : [],
   }));
+  const [pageInfo, setPageInfo] = useState({
+    page: 1,
+    packInfo: {
+      type: '-1',
+      level: '-1',
+      specialty: '-1',
+      topics: isTOEIC ? [TOEIC_KEY] : [],
+    },
+  });
   const [loading, setLoading] = useState(true);
   const [list, setList] = useState([]);
   const [more, setMore] = useState(true); // toggle infinite scrolling
@@ -84,9 +93,8 @@ function DictionaryData({ isTOEIC }) {
     (async function () {
       try {
         const apiRes = await commonApi.getWordPackTotal(packInfo);
-        
         if (apiRes.status === 200 && isSub) {
-          const total  = apiRes.data;
+          const { total = 0 } = apiRes.data;
           totalPage.current = Math.ceil(total / perPage);
         }
       } catch (error) {}
@@ -102,7 +110,7 @@ function DictionaryData({ isTOEIC }) {
     (async function () {
       try {
         setLoading(true);
-        const apiRes = await wordApi.getWordList(
+        const apiRes = await wordApi.getWordPack(
           page,
           perPage,
           packInfo,
@@ -110,7 +118,7 @@ function DictionaryData({ isTOEIC }) {
         );
         console.log(apiRes)
         if (apiRes.status === 200 && isSub) {
-          const { packList = [] } = apiRes.data;
+          const { packList = [] } = apiRes;
           const newList = [...list, ...packList];
           preSearchList.current = newList;
           setList(newList);
@@ -125,7 +133,7 @@ function DictionaryData({ isTOEIC }) {
     })();
 
     return () => (isSub = false);
-  }, [page, packInfo]); // [page, packInfo,  sortType]
+  }, [page, packInfo]);
 
   return (
     <>

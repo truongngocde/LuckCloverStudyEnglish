@@ -59,6 +59,12 @@ const routes = [
     component: () => <DictionaryPage isTOEIC={false}/>,
   },
   {
+    path: ROUTES.TOEIC_DICTIONARY,
+    exact: false,
+    isProtect: false,
+    component: () => <DictionaryPage isTOEIC={true}/>,
+  },
+  {
     path: ROUTES.FLASHCARD,
     exact: true,
     isProtect: false,

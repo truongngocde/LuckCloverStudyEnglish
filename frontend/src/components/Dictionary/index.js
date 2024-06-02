@@ -5,7 +5,7 @@ import WordSortModal from '../UI/WordDetailModal';
 import PropTypes from 'prop-types';
 import React from 'react';
 import DictionaryItemData from './Item/data';
-import DDSettingWordPack from './SettingWordPack';
+import SettingWordPack from './SettingWordPack';
 import DictionarySkeleton from './Skeleton';
 import useStyle from './style';
 
@@ -33,7 +33,7 @@ function Dictionary({
             classNameIcon="-setting-icon mr-5"
           />
           {!isTOEIC && (
-            <DDSettingWordPack
+            <SettingWordPack
               onChoose={onSettingWordPack}
               classNameIcon="-setting-icon"
             />

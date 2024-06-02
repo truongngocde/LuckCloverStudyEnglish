@@ -1,4 +1,3 @@
-
 import flashcardApi from '../../apis/flashcardApi';
 import { equalArray } from '../../helpers';
 import React, { useEffect, useRef, useState } from 'react';
@@ -34,7 +33,6 @@ function FlashcardData() {
     (async function getTotalWordPack() {
       try {
         const apiRes = await flashcardApi.getWordPackTotal(pageInfo.packInfo);
-
         if (apiRes.status === 200 && isSubscribe) {
           const { total = 0 } = apiRes.data;
           if (total === 0) {
@@ -68,7 +66,7 @@ function FlashcardData() {
           perPage,
           pageInfo.packInfo,
         );
-
+        console.log(apiRes)
         if (apiRes.status === 200 && isSubscribe) {
           const { packList = [] } = apiRes.data;
           setCurrentList(packList);

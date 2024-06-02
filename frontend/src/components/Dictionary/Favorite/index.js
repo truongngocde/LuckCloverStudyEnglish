@@ -5,7 +5,7 @@ import WordSortModal from '../../UI/WordDetailModal';
 import PropTypes from 'prop-types';
 import React from 'react';
 import DictionaryItemData from '../Item/data';
-import DynoDictionarySkeleton from '../Skeleton';
+import DictionarySkeleton from '../Skeleton';
 import useStyle from '../style';
 
 function FavoriteDictionary({
@@ -20,18 +20,18 @@ function FavoriteDictionary({
   const classes = useStyle();
 
   return (
-    <div className={`${classes.root} dyno-container`}>
+    <div className={`${classes.root} luckclover-container`}>
       {/* title - menu */}
       <div className="flex-center-between">
-        <h1 className="dyno-title">Từ điển của bạn</h1>
+        <h1 className="luckclover-title">Từ điển của bạn</h1>
         <div>
           <WordSortModal
             onSelect={onSortTypeChange}
-            classNameIcon="dyno-setting-icon mr-5"
+            classNameIcon="luckclover-setting-icon mr-5"
           />
         </div>
       </div>
-      <div className="dyno-break"></div>
+      <div className="luckclover-break"></div>
 
       {/* list content */}
       <div className={classes.contentWrap}>
@@ -41,7 +41,7 @@ function FavoriteDictionary({
           <ul id="dictionaryId" className={`${classes.list} flex-col w-100`}>
             <>
               {isFirstLoad ? (
-                <DynoDictionarySkeleton className={classes.skeleton} />
+                <DictionarySkeleton className={classes.skeleton} />
               ) : (
                 <>
                   {list && list.length > 0 ? (
