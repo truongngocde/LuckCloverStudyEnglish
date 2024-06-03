@@ -9,7 +9,7 @@ import { debounce } from '../../../helpers';
 import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import WordDetailModal from '../WordDetailModal';
+import WordDetailModal from '../WordDetailModal';
 import useStyle from './style';
 let timer = null;
 
@@ -29,7 +29,7 @@ function SearchInputCustom({ placeholder, showInput, prefixIcon }) {
     setAnchorEl(null);
 
     if (Boolean(to)) {
-      history.push(to);
+      history(to);
       return;
     }
 
@@ -124,14 +124,14 @@ function SearchInputCustom({ placeholder, showInput, prefixIcon }) {
       </Menu>
 
       {/* word detail modal */}
-      {/* {wordDetails && (
+      {wordDetails && (
         <WordDetailModal
           open={true}
           loading={false}
           {...wordDetails}
           onClose={() => setWordDetails(null)}
         />
-      )} */}
+      )}
     </div>
   );
 }

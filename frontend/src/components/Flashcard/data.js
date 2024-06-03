@@ -66,7 +66,6 @@ function FlashcardData() {
           perPage,
           pageInfo.packInfo,
         );
-        console.log(apiRes)
         if (apiRes.status === 200 && isSubscribe) {
           const { packList = [] } = apiRes.data;
           setCurrentList(packList);

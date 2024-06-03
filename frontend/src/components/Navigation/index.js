@@ -34,6 +34,7 @@ function Navigation() {
 
   const onOpenMenu = (e) => setAnchorMenu(e.currentTarget);
   const onCloseMenu = () => setAnchorMenu(null);
+
   return (
     <div className={`${classes.navWrapper} w-100vw`} id="luckcloverNav">
       <div className={`${classes.nav} w-100`}>
@@ -52,7 +53,6 @@ function Navigation() {
                 alt="Logo"
               />
             </Link>
-            
           )}
 
           {/* control, setting */}
@@ -96,8 +96,7 @@ function Navigation() {
                   }}
                   variant="contained"
                   color="primary"
-                  size="small"
-                >
+                  size="small">
                   Đăng nhập
                 </Button>
               </Link>

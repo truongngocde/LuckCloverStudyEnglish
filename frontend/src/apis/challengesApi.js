@@ -10,7 +10,7 @@ const challengeApi = {
     topics = [],
     nQuestion = 50,
   ) => {
-    return axios.get(`${URL}/correct-word/pack`, {
+    return axios.get(`${URL}/correct-word-pack`, {
       params: {
         type,
         level,
@@ -29,7 +29,7 @@ const challengeApi = {
     topics = [],
     nQuestion = 50,
   ) => {
-    return axios.get(`${URL}/match-word/pack`, {
+    return axios.get(`${URL}/match-word-pack`, {
       params: {
         type,
         level,
@@ -42,7 +42,7 @@ const challengeApi = {
 
   // fast word
   getWordPackWordFast: (topic = 0) => {
-    return axios.get(`${URL}/fast-word/pack`, {
+    return axios.get(`${URL}/fast-word-pack`, {
       params: { topic },
     });
   },

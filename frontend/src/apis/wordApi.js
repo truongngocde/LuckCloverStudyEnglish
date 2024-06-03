@@ -12,16 +12,10 @@ const wordApi = {
   },
 
   // get word, type, phonetic, mean
-  getWordPack: async (page = 1, perPage = 8, packInfo) => {
-    try {
-      const response = await axios.get(`${URL}/pack`, {
-        params: { page, perPage, packInfo: JSON.stringify(packInfo) },
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching word pack:', error);
-      throw error;
-    }
+  getWordPack: (page = 1, perPage = 8, packInfo, sortType = 'rand') => {
+    return axios.get(`${URL}/pack`, {
+      params: { page, perPage, packInfo: JSON.stringify(packInfo), sortType },
+    });
   },
 
   getSearchWord: (word = '', isCompact = false) => {

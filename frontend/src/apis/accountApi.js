@@ -1,31 +1,30 @@
-import axios from 'axios';
+import axiosClient from './axiosClient';
 
-const URL = 'http://localhost:8080/apis/accounts';
-
+const URL = '/accounts';
 
 const accountApi = {
   postRegisterAccount: (email, name, password) => {
-    return axios.post(`${URL}/register`, { email, name, password });
+    return axiosClient.post(`${URL}/register`, { email, name, password });
   },
 
   postLogin: (email, password) => {
-    return axios.post(`${URL}/login`, { email, password });
+    return axiosClient.post(`${URL}/login`, { email, password });
   },
 
   postLoginWithGoogle: (access_token) => {
-    return axios.post(`${URL}/login-gg`, { access_token });
+    return axiosClient.post(`${URL}/login-gg`, { access_token });
   },
 
   postLoginWithFacebook: (access_token) => {
-    return axios.post(`${URL}/login-fb`, { access_token });
+    return axiosClient.post(`${URL}/login-fb`, { access_token });
   },
 
   postLogout: () => {
-    return axios.post(`${URL}/logout`);
+    return axiosClient.post(`${URL}/logout`);
   },
 
   postResetPassword: (email, password, verifyCode) => {
-    return axios.post(`${URL}/reset-password`, {
+    return axiosClient.post(`${URL}/reset-password`, {
       email,
       password,
       verifyCode,
@@ -33,33 +32,33 @@ const accountApi = {
   },
 
   putToggleWordFavorite: (username, word, isAdd) => {
-    return axios.put(`${URL}/toggle-favorite`, { username, word, isAdd });
+    return axiosClient.put(`${URL}/toggle-favorite`, { username, word, isAdd });
   },
 
   putUpdateUserCoin: (newCoin) => {
-    return axios.put(`${URL}/update-coin`, { newCoin });
+    return axiosClient.put(`${URL}/update-coin`, { newCoin });
   },
 
   putUpdateAvt: (avtSrc = '') => {
-    return axios.put(`${URL}/update-avt`, { avtSrc });
+    return axiosClient.put(`${URL}/update-avt`, { avtSrc });
   },
 
   putUpdateProfile: (name = '', username = '') => {
-    return axios.put(`${URL}/update-profile`, { name, username });
+    return axiosClient.put(`${URL}/update-profile`, { name, username });
   },
 
   getUserInfo: () => {
-    return axios.get(`${URL}/user-info`);
+    return axiosClient.get(`${URL}/user-info`);
   },
 
   getSendVerifyCode: (email) => {
-    return axios.get(`${URL}/send-verify-code`, {
+    return axiosClient.get(`${URL}/send-verify-code`, {
       params: { email },
     });
   },
 
   getUserProfile: () => {
-    return axios.get(`${URL}/user-profile`);
+    return axiosClient.get(`${URL}/user-profile`);
   },
 };
 

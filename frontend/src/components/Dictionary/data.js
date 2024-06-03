@@ -116,9 +116,8 @@ function DictionaryData({ isTOEIC }) {
           packInfo,
           // sortType,
         );
-        console.log(apiRes)
         if (apiRes.status === 200 && isSub) {
-          const { packList = [] } = apiRes;
+          const { packList = [] } = apiRes.data;
           const newList = [...list, ...packList];
           preSearchList.current = newList;
           setList(newList);

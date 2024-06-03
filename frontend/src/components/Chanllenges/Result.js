@@ -75,7 +75,7 @@ function CorrectWordResult({ nRight, nWrong, nRightConsecutive, onReplay }) {
 
   return (
     <div className={`${classes.root} flex-center-col`}>
-      <img className={classes.img} src={cupIcon} alt="Cup Photo" />
+      <imgage className={classes.img} src={cupIcon} alt="Cup Photo" />
 
       <div className={`${classes.result} flex-center--ver`}>
         <b>{nRight}</b>&nbsp;Đúng

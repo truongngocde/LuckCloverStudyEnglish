@@ -28,7 +28,7 @@ function DynoDictionaryItem({
       <div
         className="w-100 flex-center--ver"
         onClick={() => onShowDetail(word)}>
-        <img className={classes.picture} src={imgSrc} alt="photo" />
+        {/*    <img className={classes.picture} src={imgSrc} alt="photo" /> */}
         <div className="ml-8 flex-grow-1">
           <h3 className={classes.word}>
             {word}{' '}
