@@ -80,14 +80,6 @@ const SentenceComponent = () => {
           </ul>
         </div>
       </div>
-      <ul>
-        {/* render list */}
-        {sentenceList.map((item, index) => (
-          <li className={classes.listItem} key={index}>
-            <CommunicationPhraseItem {...item} />
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

@@ -9,13 +9,8 @@ function CommunicationPhraseData() {
 
   const [list, setList] = useState([]);
   
-
-  
-
-  
-
   useEffect(() => {
-
+    let isSub = true;
     (async function () {
       try {
         
@@ -27,14 +22,12 @@ function CommunicationPhraseData() {
       } catch (error) {
       } 
     })();
-
-    
+  
   }, []);
 
   return (
     <CommunicationPhrase
-      list={list}
-      
+      list={list}      
     />
   );
 }
