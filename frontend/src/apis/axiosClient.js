@@ -7,7 +7,7 @@ const axiosClient = axios.create({
       ? process.env.REACT_APP_API_LOCAL_BASE_URL
       : process.env.REACT_APP_API_BASE_URL,
   headers: {
-    'content-type': 'application/json',
+    'Content-Type': 'application/json',
   },
   withCredentials: true,
   paramsSerializer: (params) => queryString.stringify(params),
@@ -15,20 +15,24 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
   (config) => {
+    const token = localStorage.getItem('authToken');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
-    throw error;
-  },
+    return Promise.reject(error);
+  }
 );
 
-axios.interceptors.response.use(
-  (res) => {
-    return res;
+axiosClient.interceptors.response.use(
+  (response) => {
+    return response;
   },
   (error) => {
-    throw error;
-  },
+    return Promise.reject(error);
+  }
 );
 
 export default axiosClient;

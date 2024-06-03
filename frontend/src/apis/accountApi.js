@@ -1,25 +1,53 @@
 import axiosClient from './axiosClient';
 
-const URL = '/accounts';
+const URL = 'http://localhost:8080/apis/accounts';
 
 const accountApi = {
   postRegisterAccount: (email, name, password) => {
     return axiosClient.post(`${URL}/register`, { email, name, password });
   },
 
-  postLogin: (email, password) => {
-    return axiosClient.post(`${URL}/login`, { email, password });
+  postLogin: async (email, password) => {
+    try {
+      const response = await axiosClient.post(`${URL}/login`, { email, password });
+      if (response.data.token) {
+        localStorage.setItem('authToken', response.data.token);
+      }
+      return response;
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+    }
   },
 
-  postLoginWithGoogle: (access_token) => {
-    return axiosClient.post(`${URL}/login-gg`, { access_token });
-  },
+  // postLoginWithGoogle: async (access_token) => {
+  //   try {
+  //     const response = await axiosClient.post(`${URL}/login-gg`, { access_token });
+  //     if (response.data.token) {
+  //       localStorage.setItem('authToken', response.data.token);
+  //     }
+  //     return response;
+  //   } catch (error) {
+  //     console.error('Google login error:', error);
+  //     throw error;
+  //   }
+  // },
 
-  postLoginWithFacebook: (access_token) => {
-    return axiosClient.post(`${URL}/login-fb`, { access_token });
-  },
+  // postLoginWithFacebook: async (access_token) => {
+  //   try {
+  //     const response = await axiosClient.post(`${URL}/login-fb`, { access_token });
+  //     if (response.data.token) {
+  //       localStorage.setItem('authToken', response.data.token);
+  //     }
+  //     return response;
+  //   } catch (error) {
+  //     console.error('Facebook login error:', error);
+  //     throw error;
+  //   }
+  // },
 
   postLogout: () => {
+    localStorage.removeItem('authToken');
     return axiosClient.post(`${URL}/logout`);
   },
 
@@ -39,8 +67,17 @@ const accountApi = {
     return axiosClient.put(`${URL}/update-coin`, { newCoin });
   },
 
-  putUpdateAvt: (avtSrc = '') => {
-    return axiosClient.put(`${URL}/update-avt`, { avtSrc });
+  putUpdateAvt: async (avtSrc = '') => {
+    try {
+      const response = await axiosClient.put(`${URL}/update-avt`, { avtSrc });
+      if (response.data.token) {
+        localStorage.setItem('authToken', response.data.token);
+      }
+      return response;
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+    }
   },
 
   putUpdateProfile: (name = '', username = '') => {

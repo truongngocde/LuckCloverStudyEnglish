@@ -8,18 +8,15 @@ const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 const https = require('https');
+const bodyParser = require('body-parser');
+
 
 // ============== set port ==============
 const app = express();
 const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || '8080');
 
-// ================== config ==================
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(cookieParser());
-app.use(cors());
 
 // import local file
 const { MAX } = require('./constant');
@@ -48,7 +45,16 @@ mongoose
   .then(() => {
     console.log(`Database connected successfully`);
   });
+// ================== config ==================
 
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors({
+  origin: 'http://localhost:3000', // Update to match your frontend URL
+  credentials: true
+}));
 // ============= setup ==================
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -63,10 +69,6 @@ if (!dev) {
 } else {
   app.use(morgan('dev'));
 }
-
-
-
-
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT} !!!`);
 });

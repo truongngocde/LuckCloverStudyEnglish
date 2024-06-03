@@ -5,6 +5,7 @@ import HomePage from '../pages/Home';
 
 const Register = React.lazy(() => import('../pages/Register'))
 const Login = React.lazy(() => import('../pages/Login'))
+const UserAccount = React.lazy(() => import('../pages/UserAccount'))
 
 const IPAPage = React.lazy(() => import('../pages/IPA'));
 const CommunicationPhrase = React.lazy(() => import('../pages/CommunicationPhrase'));
@@ -33,6 +34,12 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <Login />,
+  },
+  {
+    path: ROUTES.USER_ACCOUNT,
+    exact: false,
+    isProtect: true,
+    component: () => <UserAccount />,
   },
   {
     path: ROUTES.IPA,
