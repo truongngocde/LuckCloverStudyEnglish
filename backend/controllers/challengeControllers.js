@@ -2,7 +2,7 @@ const { MAX } = require('../constant');
 const { randomWordQuestionPack } = require('../helpers/challengeHelpers');
 const { getWordPackService } = require('../services/utilsServices');
 
-// ======== CORRECT WORD GAME ========
+// ======== CORRECT WORD========
 exports.getWordPackCorrectWord = async (req, res, next) => {
   try {
     let { nQuestion = 50, ...packInfo } = req.query;
@@ -30,7 +30,7 @@ exports.getWordPackCorrectWord = async (req, res, next) => {
   }
 };
 
-// ======== WORD MATCH GAME ========
+// ======== WORD MATCH ========
 exports.getWordPackWordMatch = async (req, res, next) => {
   try {
     let { nQuestion = 50, ...packInfo } = req.query;
@@ -51,7 +51,7 @@ exports.getWordPackWordMatch = async (req, res, next) => {
   }
 };
 
-// ======== FAST GAME ========
+// ======== FAST WORD ========
 exports.getWordPackWordFast = async (req, res, next) => {
   try {
     const { topic } = req.query;
@@ -67,7 +67,7 @@ exports.getWordPackWordFast = async (req, res, next) => {
 
     return res.status(200).json({ wordPack });
   } catch (error) {
-    console.error('GET WORD PACK FAST GAME ERROR: ', error);
+    console.error('GET WORD PACK FAST ERROR: ', error);
     return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });
   }
 };

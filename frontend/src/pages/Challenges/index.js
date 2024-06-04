@@ -45,7 +45,7 @@ const CHALLENGES_LIST = [
   /*  {
     title: 'Ai là triệu phú',
     subTitle:
-      'Trải nghiệm game show truyền hình "Ai là triệu phú" phiên bản tiếng Anh ngay với Luckclover English',
+      'Trải nghiệm show truyền hình "Ai là triệu phú" phiên bản tiếng Anh ngay với Luckclover English',
     imgUrl: millionaireIcon,
     to: CHALLENGES.MILLIONAIRE,
   },
@@ -64,9 +64,9 @@ const CHALLENGES_LIST = [
     to: CHALLENGES.GRAMMARLY,
   }, */
   /*   {
-    title: 'Game VIP',
+    title: 'VIP',
     subTitle:
-      'Tận hưởng một game cực kỳ tuyệt vời của Luckclover nhé, nâng cấp tài khoản VIP để chơi.',
+      'Tận hưởng một cực kỳ tuyệt vời của Luckclover nhé, nâng cấp tài khoản VIP để chơi.',
     imgUrl: vipIcon,
     to: CHALLENGES.VIP,
   }, */

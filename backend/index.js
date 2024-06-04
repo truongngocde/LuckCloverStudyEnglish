@@ -27,7 +27,8 @@ const flashcardRouters = require('./routers/flashcardRouters');
 const challengeRoters = require('./routers/challengeRouters');
 const blogRouters = require('./routers/blogRouters');
 const accountRouters = require('./routers/accountRouters');
-
+const highscoreApis = require('./routers/highscoreModels');
+const passportConfig = require('./middlewares/authMiddlewares');
 
 // =========== Connect mongodb with mongoose =========
 dotenv.config({ path: 'config.env' });
@@ -81,3 +82,4 @@ app.use(`${BASE_URL}/flashcards`, flashcardRouters);
 app.use(`${BASE_URL}/challenges`, challengeRoters);
 app.use(`${BASE_URL}/blogs`, blogRouters);
 app.use(`${BASE_URL}/accounts`, accountRouters);
+app.use(`${BASE_URL}/highscores`, passportConfig.jwtAuthentication, highscoreApis);

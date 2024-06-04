@@ -17,6 +17,8 @@ const DictionaryPage = React.lazy(() => import('../pages/Dictionary'));
 
 const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
+const FastWordPage = React.lazy(() => import('../pages/Challenges/FastWord'));
+const MatchWordGPage = React.lazy(() => import('../pages/Challenges/MatchWord'));
 const routes = [
   {
     path: ROUTES.HOME,
@@ -103,17 +105,18 @@ const routes = [
     component: () => <CorrectWordPage />,
   },
   {
+    path: ROUTES.CHALLENGES.FAST_WORD,
+    exact: true,
+    isProtect: false,
+    component: () => <FastWordPage />,
+  },
+  {
     path: ROUTES.CHALLENGES.WORD_MATCHING,
     exact: true,
     isProtect: false,
-    // component: () => <WordMatchGamePage />,
+    component: () => <MatchWordGPage />,
   },
-  {
-    path: ROUTES.CHALLENGES.FAST_WORD,
-    exact: false,
-    isProtect: false,
-    // component: () => <FastGamePage />,
-  },
+  
 ];
 
 const renderRoutes = (routes, isAuth = false) => {
