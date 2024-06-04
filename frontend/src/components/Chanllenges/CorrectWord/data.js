@@ -79,7 +79,7 @@ function CorrectWordData() {
         <WordPack
           open={true}
           onChoose={getWordPackage}
-          onCancel={() => history.goBack()}
+          onCancel={() => history(-1)}
           topicMultiples={true}
           title="Lựa chọn gói từ vựng"
           okBtnText="Bắt đầu"

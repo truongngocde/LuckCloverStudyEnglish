@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router';
 import { ROUTES } from '../constants';
 import HomePage from '../pages/Home';
+import Logout from '../components/Logout';
 
 const Register = React.lazy(() => import('../pages/Register'))
 const Login = React.lazy(() => import('../pages/Login'))
@@ -34,6 +35,12 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <Login />,
+  },
+  {
+    path: ROUTES.LOGOUT,
+    exact: true,
+    isProtect: false,
+    component: () => <Logout />,
   },
   {
     path: ROUTES.USER_ACCOUNT,

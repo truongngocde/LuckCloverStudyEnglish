@@ -48,7 +48,7 @@ exports.createUser = async (accountId, username, name, avt = '') => {
   }
 };
 
-exports.isExitsWordInFavorites = async (word, username) => {
+exports.isExistWordInFavorites = async (word, username) => {
   try {
     const regex = new RegExp(word, 'i');
     const isExist = await User.exists({
@@ -57,6 +57,7 @@ exports.isExitsWordInFavorites = async (word, username) => {
         $in: regex,
       },
     });
+
     return isExist;
   } catch (error) {
     throw error;

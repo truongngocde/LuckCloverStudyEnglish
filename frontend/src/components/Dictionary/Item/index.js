@@ -1,12 +1,12 @@
 import Speaker from '../../UI/Speaker';
-import WordFavorite from '../../UI/WordDetailModal';
+import WordFavorite from '../../UI/WordFavorite';
 import { DEFAULTS } from '../../../constants';
 import { cloudinaryImgOptimize } from '../../../helpers';
 import PropTypes from 'prop-types';
 import React from 'react';
 import useStyle from './style';
 
-function DynoDictionaryItem({
+function DictionaryItem({
   word,
   type,
   phonetic,
@@ -51,7 +51,7 @@ function DynoDictionaryItem({
   );
 }
 
-DynoDictionaryItem.propTypes = {
+DictionaryItem.propTypes = {
   mean: PropTypes.string,
   onShowDetail: PropTypes.func,
   phonetic: PropTypes.string,
@@ -60,8 +60,8 @@ DynoDictionaryItem.propTypes = {
   word: PropTypes.string,
 };
 
-DynoDictionaryItem.defaultProps = {
+DictionaryItem.defaultProps = {
   onShowDetail: function () {},
 };
 
-export default DynoDictionaryItem;
+export default DictionaryItem;

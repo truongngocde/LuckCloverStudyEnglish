@@ -4,7 +4,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Grid } from '@mui/material';
-import SelectCustom from '../../UI/WorkPack';
+import SelectCustom from '../../UI/SelectCustom';
 import { WORD_LEVELS, WORD_SPECIALTY, WORD_TYPES } from '../../../constants';
 import { TOPIC_OPTIONS } from '../../../constants/topics';
 import PropTypes from 'prop-types';
