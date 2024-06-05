@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/', wordControllers.getAllWords);
 
 // CLIENT
-router.get('/add-word', wordControllers.addWord);
+router.post('/add-word', wordControllers.addWord);
 router.get('/exist', wordControllers.getCheckWordExist);
 router.get('/pack', wordControllers.getWordsPack)
 router.get('/search-word', wordControllers.getSearchWord)

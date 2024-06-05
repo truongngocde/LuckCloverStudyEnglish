@@ -36,8 +36,8 @@ function Grammar({ list, loading }) {
     <div className={classes.wrapper}>
       <div className="container">
         <div className={classes.root}>
-          <h1 className="dyno-title">Học ngữ pháp cùng Luckclover</h1>
-          <div className="dyno-break"></div>
+          <h1 className="luckclover-title">Học ngữ pháp cùng Luckclover</h1>
+          <div className="luckclover-break"></div>
 
           <AutoSearchInput
             disabled={loading}

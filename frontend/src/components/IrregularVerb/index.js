@@ -199,13 +199,13 @@ function IrregularVerb() {
   return (
     <div className={`${classes.root} container`}>
       {/* header */}
-      <h1 className="dyno-title">Động từ bất quy tắc (Irregular Verb)</h1>
-      <p className="dyno-sub-title">
+      <h1 className="luckclover-title">Động từ bất quy tắc (Irregular Verb)</h1>
+      <p className="luckclover-sub-title">
         Chúng ta có hơn 600 động từ bất quy tắc, nhưng chỉ có khoảng 360 từ
         thường xuyên xuất hiện nhất. <br /> Bạn hãy tập trung học những từ này
         trước nhé 😎 (Click vào từ để nghe phát âm)
       </p>
-      <div className="dyno-break"></div>
+      <div className="luckclover-break"></div>
 
       {/* search, filter */}
       <div className="flex-center-between">

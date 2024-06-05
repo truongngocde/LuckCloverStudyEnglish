@@ -56,7 +56,7 @@ function WordDetailModal(props) {
         />
       </div>
 
-      <div className="dyno-break"></div>
+      <div className="luckclover-break"></div>
 
       {loading ? (
         <Skeleton
@@ -68,7 +68,7 @@ function WordDetailModal(props) {
         <div className={classes.content}>
           <div className="flex-center--ver my-4">
             {picture && picture !== '' && (
-              <img
+              <image
                 src={cloudinaryImgOptimize(picture, 56, 56, true)}
                 alt="Photo"
                 className={`${classes.picture} mr-8`}

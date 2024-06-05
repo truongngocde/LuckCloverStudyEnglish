@@ -14,6 +14,7 @@ const Flashcard = React.lazy(() => import('../pages/Flashcard'));
 const IrregularVerbPage = React.lazy(() => import('../pages/IrregularVerb'));
 const GrammarPage = React.lazy(() => import('../pages/Grammar'));
 const DictionaryPage = React.lazy(() => import('../pages/Dictionary'));
+const Contribution = React.lazy(() => import('../pages/Contribution'));
 
 const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
@@ -91,6 +92,12 @@ const routes = [
     exact: false,
     isProtect: false,
     component: () => <IrregularVerbPage />,
+  },
+  {
+    path: ROUTES.CONTRIBUTION,
+    exact: false,
+    isProtect: false,
+    component: () => <Contribution />,
   },
   {
     path: ROUTES.CHALLENGES.HOME,

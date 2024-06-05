@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import useStyle from './style';
 import winAudioSrc from '../../../assets/audios/win.mp3';
 import { onPlayAudio } from '../../../helpers/speakerHelper';
-import Button from '@mui/material/Button';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import highscoreApi from '../../../apis/highscoreApi';
 import accountApi from '../../../apis/accountApi';

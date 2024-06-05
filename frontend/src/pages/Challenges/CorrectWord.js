@@ -5,7 +5,7 @@ import React from 'react';
 
 function CorrectWordPage() {
   useTitle("Hãy chọn từ đúng (Let's choose the correct word)");
-  //useCloseNavigation();
+  useCloseNavigation();
   return <CorrectWordData />;
 }
 
