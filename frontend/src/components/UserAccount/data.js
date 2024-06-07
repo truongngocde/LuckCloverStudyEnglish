@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMessage } from '../../redux/slices/messageSlice';
 import { setUserAvt } from '../../redux/slices/useInfoSlice';
-import UserAccount from '.';
+import UserAccount from './index';
 
 function UserAccountData() {
   const [userInfo, setUserInfo] = useState({ email: null, createdDate: null });
@@ -62,7 +62,9 @@ function UserAccountData() {
           }),
         );
 
-        
+        setTimeout(() => {
+          window.location.reload();
+        }, 750);
       }
     } catch (error) {
       const message =

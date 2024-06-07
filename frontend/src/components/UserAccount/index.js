@@ -54,7 +54,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
     if (currentUsername.trim() === '') {
       setErrors({ ...errors, username: true });
       dispatch(
-        setMessage({ type: 'error', message: 'Vui lòng nhập username' }),
+        setMessage({ type: 'error', message: 'Vui lòng nhập username' })
       );
       return;
     }
@@ -65,7 +65,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
         setMessage({
           type: 'error',
           message: 'username không chứa khoảng trống',
-        }),
+        })
       );
       return;
     }
@@ -76,7 +76,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
         setMessage({
           type: 'error',
           message: `username tối đa ${MAX.USERNAME_LEN} ký tự`,
-        }),
+        })
       );
       return;
     }
@@ -87,7 +87,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
         setMessage({
           type: 'error',
           message: `Tên tối đa ${MAX.NAME_LEN} ký tự`,
-        }),
+        })
       );
       return;
     }
@@ -100,7 +100,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
       <div className={classes.root}>
         <div className="flex-center w-100 h-100">
           <div className={classes.avtWrap}>
-            <image
+            <img
               className={`${classes.avt} w-100 h-100`}
               src={avtSrc}
               alt="Avatar Photo"
@@ -141,7 +141,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
 
         <div className={classes.info}>
           {Boolean(email) && <p>{email}</p>}
-          {Boolean(createdDate) && <p>Đã tham gia vào {createdDate}</p>}
+          {Boolean(createdDate) && <p>Đã cập nhật vào {createdDate}</p>}
           <p>
             Số coin hiện tại: <span className={classes.coin}>{coin}</span>
           </p>
@@ -151,19 +151,22 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
           <Button
             onClick={() => setEditMode(true)}
             className={`${classes.editBtn} _btn _btn-primary w-100`}
-            startIcon={<EditIcon />}>
+            startIcon={<EditIcon />}
+          >
             Chỉnh sửa
           </Button>
         ) : (
           <div className="d-flex w-100">
             <Button
               onClick={handleCloseEditMode}
-              className={`${classes.editBtn} _btn _btn-outlined-accent w-50`}>
+              className={`${classes.editBtn} _btn _btn-outlined-accent w-50`}
+            >
               Huỷ bỏ
             </Button>
             <Button
               onClick={handleUpdate}
-              className={`${classes.editBtn} _btn _btn-primary ml-4 w-50`}>
+              className={`${classes.editBtn} _btn _btn-primary ml-4 w-50`}
+            >
               Cập nhật
             </Button>
           </div>

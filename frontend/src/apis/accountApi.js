@@ -67,17 +67,8 @@ const accountApi = {
     return axiosClient.put(`${URL}/update-coin`, { newCoin });
   },
 
-  putUpdateAvt: async (avtSrc = '') => {
-    try {
-      const response = await axiosClient.put(`${URL}/update-avt`, { avtSrc });
-      if (response.data.token) {
-        localStorage.setItem('authToken', response.data.token);
-      }
-      return response;
-    } catch (error) {
-      console.error('Login error:', error);
-      throw error;
-    }
+  putUpdateAvt: (avtSrc = '') => {
+    return axiosClient.put(`${URL}/update-avt`, { avtSrc });
   },
 
   putUpdateProfile: (name = '', username = '') => {

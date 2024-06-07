@@ -37,7 +37,6 @@ function CorrectWordData() {
         n,
       );
 
-      console.log(apiRes)
       if (apiRes.status === 200) {
         const { wordPack = [] } = apiRes.data;
         if (wordPack.length === 0) {

@@ -5,7 +5,7 @@ const Word = require('../models/wordModel');
 const Sentence = require('../models/sentenceModel');
 const Verifycode = require('../models/wordModel');
 
-exports.uploadImage = async (imgSrc, folderName = '', config = {}) => {
+exports.uploadImage = async (imgSrc, folderName = 'luckclover', config = {}) => {
   try {
     const result = await cloudinary.uploader.upload(imgSrc, {
       folder: folderName,

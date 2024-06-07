@@ -127,6 +127,7 @@ function WordContribution({ onSubmitForm, submitting }) {
             type = eType ? eType.target?.value : getValues('type');
 
           const apiRes = await wordApi.getCheckWordExistence(word, type);
+          
           if (apiRes.status === 200) {
             const { isExist = false } = apiRes.data;
             if (isExist) {

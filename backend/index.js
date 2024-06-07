@@ -10,13 +10,10 @@ const path = require('path');
 const https = require('https');
 const bodyParser = require('body-parser');
 
-
 // ============== set port ==============
 const app = express();
 const normalizePort = (port) => parseInt(port, 10);
 const PORT = normalizePort(process.env.PORT || '8080');
-
-
 
 // import local file
 const { MAX } = require('./constant');

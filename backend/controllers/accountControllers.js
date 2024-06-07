@@ -222,12 +222,11 @@ exports.putToggleFavorite = async (req, res) => {
     const updateStatus = await updateFavoriteList(word, username, isAdd);
 
     if (updateStatus && updateStatus.ok && updateStatus.nModified) {
-      return res.status(200).json({ message: 'success' });
+      return res.status(200).json({ message: 'Thành công' });
     } else {
-      return res.status(409).json({ message: 'failed' });
+      return res.status(409).json({ message: 'Thất bại' });
     }
 
-    
   } catch (error) {
     console.error('PUT TOGGLE FAVORITE ERROR: ', error);
     return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });

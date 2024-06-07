@@ -17,7 +17,7 @@ exports.addWord = async (req, res, next) => {
   try {
     const { picture, word, type, ...rest } = req.body;
 
-    // check word exist
+    // check existence of word
     const isExist = await isExistWord(word, type);
     if (isExist) {
       return res
@@ -25,10 +25,10 @@ exports.addWord = async (req, res, next) => {
         .json({ message: `Từ "${word} (${type})" đã tồn tại trong từ điển` });
     }
 
-    // upload desc picture
+    // upload description picture if available
     let pictureUrl = null;
     if (picture) {
-      pictureUrl = await uploadImage(picture, 'luckcloverenglish/words');
+      pictureUrl = await uploadImage(picture, 'luckcloverEnglish/words');
     }
 
     // create the new word
@@ -39,15 +39,13 @@ exports.addWord = async (req, res, next) => {
       isChecked: false,
       ...rest,
     });
+
     if (isCreateSuccess) {
-      return res.status(200).json({
-        message: 'Tạo từ mới thành công',
-      });
+      return res.status(200).json({ message: 'Tạo từ mới thành công' });
     }
-    return res.status(503).json({
-      message: 'Lỗi dịch vụ, thử lại sau',
-    });
+    return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
   } catch (error) {
+    console.error('POST CONTRIBUTE WORD ERROR: ', error);
     return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
   }
 };

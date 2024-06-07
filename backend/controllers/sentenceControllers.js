@@ -1,6 +1,6 @@
 const Sentence = require('../models/sentenceModel');
 
-const { isExistSentence } = require('../services/sentenceServices');
+const { isExistSentence } = require('../services/utilsServices');
 const {
   createSentence,
   getTotalSentences: getTotalSentenceService,

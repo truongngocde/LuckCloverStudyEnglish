@@ -147,7 +147,7 @@ function DictionaryData({ isTOEIC }) {
         // onSortTypeChange={onSortTypeChange}
         onSearchWord={onSearchWord}
       />
-      <WordDetailModal />
+      {/* <WordDetailModal /> */}
     </>
   );
 }

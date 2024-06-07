@@ -2,7 +2,7 @@ import wordApi from '../../../apis/wordApi';
 import WordDetailModal from '../../UI/WordDetailModal';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import FavoriteDictionary from '.';
+import FavoriteDictionary from './index';
 
 const perPage = 20;
 
@@ -60,7 +60,7 @@ function FavoriteDictionaryData() {
         const apiRes = await wordApi.getUserFavoriteList(
           page,
           perPage,
-          sortType,
+          // sortType,
         );
         if (apiRes.status === 200 && isSub) {
           const { packList = [] } = apiRes.data;
@@ -78,7 +78,7 @@ function FavoriteDictionaryData() {
     })();
 
     return () => (isSub = false);
-  }, [page, sortType]);
+  }, [page]); //[page, sortType]
 
   return (
     <>
@@ -88,10 +88,10 @@ function FavoriteDictionaryData() {
         onLoadData={nextPage}
         more={more}
         isFirstLoad={isFirstLoad}
-        onSortTypeChange={onSortTypeChange}
+        // onSortTypeChange={onSortTypeChange}
         onSearchWord={onSearchWord}
       />
-      <WordDetailModal />
+      {/* <WordDetailModal /> */}
     </>
   );
 }

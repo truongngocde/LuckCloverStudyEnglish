@@ -126,7 +126,7 @@ exports.updatePassword = async (email = '', newPassword = '') => {
 
 exports.updateAvt = async ( username = '', avtSrc = '') => {
     try {
-        const picture = await uploadImage(avtSrc, 'luckcloverenglish/user-avt');
+        const picture = await uploadImage(avtSrc, 'luckcloverEnglish/user-avt');
         const isUpdated = await User.updateOne({username}, {avt: picture});
         if (isUpdated.n && isUpdated.ok) return picture;
 

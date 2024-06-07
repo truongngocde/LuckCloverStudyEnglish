@@ -56,7 +56,9 @@ function WordContributionData() {
         word,
         phonetic: phonetic.replaceAll('/', ''),
       };
+      console.log(dataSend)
       const apiRes = await wordApi.postContributeWord(dataSend);
+      console.log(apiRes)
       if (apiRes.status === 200) {
         dispatch(
           setMessage({

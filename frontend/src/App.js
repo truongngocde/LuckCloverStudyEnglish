@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Element } from 'react-scroll';
 import { useDispatch, useSelector } from 'react-redux';
-
+import Message from './components/UI/Message';
 import { ThemeProvider } from '@mui/material/styles';
 import Navigation from './components/Navigation';
 import GlobalLoading from './components/UI/GlobalLoading';
@@ -56,7 +56,7 @@ function App() {
 
               {/* common component */}
               <div id="_overlay"></div>
-              {/* <Message /> */}
+              <Message />
               {/* <SpeedDials /> */}
             </div>
           </Router>
