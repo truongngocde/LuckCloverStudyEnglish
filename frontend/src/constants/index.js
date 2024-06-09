@@ -77,6 +77,7 @@ export const ROUTES = {
     JIGSAW: '/challenges/jigsaw-puzzle',
     FAST_WORD: '/challenges/fast-word',
     WORD_MATCHING: '/challenges/word-match',
+    SENTENCE_MATCHING: '/challenges/sentence-match',
     GRAMMARLY: '/challenges/grammarly',
     VIP: '/challenges/vip',
     COMPLETED_SENTENCE: '/challenges/completed-sentence',

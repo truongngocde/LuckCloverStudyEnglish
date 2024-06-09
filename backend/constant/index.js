@@ -24,6 +24,7 @@ exports.MAX = {
     VERIFY_CODE: 6,
     USER_COIN: 999_999,
     VERIFY_TIME: 10 * 60 * 1000,
+    LEN_SENTENCE_PACK: 500,
 };
 
 exports.DEFAULT = {

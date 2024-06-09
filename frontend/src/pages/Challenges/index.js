@@ -41,7 +41,7 @@ const CHALLENGES_LIST = [
     subTitle:
       'Luyện tập ngữ pháp với câu trắc nghiệm điền vào chỗ trống sao cho phù hợp nhé.',
     imgUrl: grammarlyIcon,
-    to: CHALLENGES.GRAMMARLY,
+    to: CHALLENGES.SENTENCE_MATCHING,
   },
   {
     title: 'Nối từ',

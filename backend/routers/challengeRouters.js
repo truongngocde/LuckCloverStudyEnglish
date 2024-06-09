@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get('/correct-word-pack', challengeControllers.getWordPackCorrectWord);
 router.get('/match-word-pack', challengeControllers.getWordPackWordMatch);
+router.get('/match-sentence-pack', challengeControllers.getSentencePackMatch);
 router.get('/fast-word-pack', challengeControllers.getWordPackWordFast);
 
 

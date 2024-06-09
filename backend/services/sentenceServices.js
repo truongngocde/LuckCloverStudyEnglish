@@ -43,3 +43,12 @@ exports.getSentenceList = async (page = 1, perPage = 20, topics = []) => {
         throw error;
     }
 }
+
+exports.getSentenceDetail = async (sentence = '') => {
+    try {
+        const res = await Sentence.findOne({ sentence });
+        return res;
+    } catch (error) {
+        throw error;
+    }
+}

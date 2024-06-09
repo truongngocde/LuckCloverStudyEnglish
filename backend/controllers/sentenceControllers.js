@@ -3,6 +3,7 @@ const Sentence = require('../models/sentenceModel');
 const { isExistSentence } = require('../services/utilsServices');
 const {
   createSentence,
+  getSentenceDetail,
   getTotalSentences: getTotalSentenceService,
   getSentenceList: getSentenceListService,
 } = require('../services/sentenceServices');
@@ -68,5 +69,20 @@ exports.getSentenceList = async (req, res, next) => {
   } catch (error) {
     console.error(' ERROR: ', error);
     return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });
+  }
+};
+
+exports.getSentenceDetails = async (req, res, next) => {
+  try {
+    const { sentence } = req.query;
+    const sentenceDetail = await getSentenceDetail(sentence);
+    if (sentenceDetail) {
+      return res.status(200).json(sentenceDetail);
+    }
+  } catch (error) {
+    console.log(error);
+    return res.status(503).json({
+      message: 'Lỗi dịch vụ, thử lại sau.',
+    });
   }
 };

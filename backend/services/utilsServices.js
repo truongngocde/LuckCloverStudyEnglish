@@ -114,14 +114,34 @@ exports.removeVerifyCode = async (email = '') => {
 }
 
 
+exports.getSentencePackService = async (
+  packInfo = {},
+  skip = 0,
+  limit = 500,
+  select = '',
+  expandQuery = null,
+) => {
+  try {
+      let query = convertPackInfoToQueryStr(packInfo);
 
-const getRandomWords = async (excludeWords, n) => {
-  // Lấy các từ ngẫu nhiên từ database, loại bỏ các từ đã cho trước
-  const words = await Word.aggregate([
-    { $match: { word: { $nin: excludeWords } } },
-    { $sample: { size: n } }
-  ]);
-  return words.map(word => word.word);
+      if (expandQuery && typeof expandQuery === 'object') {
+          Object.assign(query, expandQuery);
+      }
+
+      const packList = await Sentence.find(query)
+          .skip(skip)
+          .limit(limit)
+          .select(select);
+
+      return packList;
+  } catch (error) {
+      throw error;
+  }
 };
+
+
+
+
+
 
 

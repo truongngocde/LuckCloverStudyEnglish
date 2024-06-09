@@ -25,6 +25,9 @@ const sentenceApi = {
       },
     });
   },
+  getSentenceDetails: (sentence = '') => {
+    return axios.get(`${URL}/sentence-details`, { params: { sentence } });
+  },
 };
 
 export default sentenceApi;

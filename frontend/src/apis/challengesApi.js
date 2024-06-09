@@ -46,7 +46,18 @@ const challengeApi = {
       params: { topic },
     });
   },
-
+  // sentence match 
+  getSentencePackWordMatch: (
+    topics = [],
+    nQuestion = 50,
+  ) => {
+    return axios.get(`${URL}/match-sentence-pack`, {
+      params: {
+        topics: JSON.stringify(topics),
+        nQuestion,
+      },
+    });
+  },
 
 
 };

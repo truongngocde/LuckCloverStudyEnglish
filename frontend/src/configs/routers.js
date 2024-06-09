@@ -20,6 +20,7 @@ const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
 const FastWordPage = React.lazy(() => import('../pages/Challenges/FastWord'));
 const MatchWordGPage = React.lazy(() => import('../pages/Challenges/MatchWord'));
+const MatchSentenceGPage = React.lazy(() => import('../pages/Challenges/MatchSentence'));
 
 
 const routes = [
@@ -124,6 +125,12 @@ const routes = [
     exact: true,
     isProtect: false,
     component: () => <MatchWordGPage />,
+  },
+  {
+    path: ROUTES.CHALLENGES.SENTENCE_MATCHING,
+    exact: true,
+    isProtect: false,
+    component: () => <MatchSentenceGPage />,
   },
   
   
