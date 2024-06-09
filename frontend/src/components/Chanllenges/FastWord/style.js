@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     zIndex: -1,
     position: 'absolute',
     backgroundImage:
-      'url(https://res.cloudinary.com/dynonary/image/upload/v1628497463/dynonary/games/fast-game-bg_huk7ii.jpg)',
+      'url(https://res.cloudinary.com/doon70xws/image/upload/v1717849747/luckcloverEnglish/af1kexephomdyg4onur4.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',

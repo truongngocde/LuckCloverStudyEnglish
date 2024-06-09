@@ -20,7 +20,7 @@ export const DEFAULTS = {
   VOICE_SPEED: 1,
   VOICE_VOLUME: 1,
   IMAGE_SRC:
-    'https://res.cloudinary.com/luckclovernary/image/upload/v1625136714/luckclovernary/default-image.png',
+    'https://res.cloudinary.com/doon70xws/image/upload/v1717847803/luckcloverEnglish/words/c7fzzgve8ibklv438rop.jpg',
 };
 
 export const LINKS = {
@@ -79,6 +79,7 @@ export const ROUTES = {
     WORD_MATCHING: '/challenges/word-match',
     GRAMMARLY: '/challenges/grammarly',
     VIP: '/challenges/vip',
+    COMPLETED_SENTENCE: '/challenges/completed-sentence',
   },
 };
 

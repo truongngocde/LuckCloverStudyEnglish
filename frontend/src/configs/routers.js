@@ -20,6 +20,8 @@ const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
 const FastWordPage = React.lazy(() => import('../pages/Challenges/FastWord'));
 const MatchWordGPage = React.lazy(() => import('../pages/Challenges/MatchWord'));
+
+
 const routes = [
   {
     path: ROUTES.HOME,
@@ -123,6 +125,7 @@ const routes = [
     isProtect: false,
     component: () => <MatchWordGPage />,
   },
+  
   
 ];
 

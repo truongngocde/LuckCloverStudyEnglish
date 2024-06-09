@@ -63,16 +63,17 @@ function Flashcard({
             )}
           </Tooltip>
 
-          {/* <Tooltip title="Cài đặt gói từ vựng" placement="bottom">
+          <Tooltip title="Cài đặt gói từ vựng" placement="bottom">
             <SettingsIcon
               className={classes.icon}
               onClick={() => setOpenWordPack(true)}
             />
           </Tooltip>
 
-          <TooltipCustom title={tutorial} placement="bottom">
+          {/* <TooltipCustom title={tutorial} placement="bottom">
             <HelpIcon className={classes.icon} />
           </TooltipCustom> */}
+          
         </div>
       </div>
       <div className="luckclover-break" />

@@ -1,6 +1,7 @@
 const { MAX } = require('../constant');
 const { randomWordQuestionPack } = require('../helpers/challengeHelpers');
-const { getWordPackService } = require('../services/utilsServices');
+const { getWordPackService, getRandomWords } = require('../services/utilsServices');
+
 
 // ======== CORRECT WORD========
 exports.getWordPackCorrectWord = async (req, res, next) => {
@@ -71,3 +72,44 @@ exports.getWordPackWordFast = async (req, res, next) => {
     return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });
   }
 };
+// ================= completed sentence ===============
+exports.getSentencePackWordFill = async (req, res, next) => {
+  try {
+    let { nQuestion = 50, ...packInfo } = req.query;
+    nQuestion = parseInt(nQuestion);
+
+    const sentenceList = await Sentence.find().limit(nQuestion).select('-_id sentence mean');
+    if (sentenceList) {
+      const questionPack = await Promise.all(sentenceList.map(async sentence => {
+        const words = sentence.sentence.split(' ');
+        const blankIndices = [Math.floor(Math.random() * words.length)];
+        if (words.length > 2) {
+          blankIndices.push(Math.floor(Math.random() * words.length));
+        }
+        const wordsToFill = blankIndices.map(index => words[index]);
+
+        for (const index of blankIndices) {
+          words[index] = '______';
+        }
+
+        const randomWords = await getRandomWords(wordsToFill, 5);
+        const options = [...wordsToFill, ...randomWords].sort(() => Math.random() - 0.5);
+
+        return {
+          sentence: words.join(' '),
+          mean: sentence.mean,
+          correctWords: wordsToFill,
+          options: options
+        };
+      }));
+
+      return res.status(200).json({ sentencePack: questionPack });
+    }
+
+    return res.status(200).json({ sentencePack: [] });
+  } catch (error) {
+    console.error('GET SENTENCE PACK WORD FILL ERROR: ', error);
+    return res.status(503).json({ message: 'Lỗi dịch vụ, thử lại sau' });
+  }
+};
+

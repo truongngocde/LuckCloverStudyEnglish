@@ -234,7 +234,7 @@ function FastWord({ list }) {
                     key={index}
                     className={classes.answerItem}
                     onClick={() => handleAnswer(item.word, index)}>
-                    {item.picture && <image src={item.picture} />}
+                    {item.picture && <img src={item.picture} />}
                   </div>
                 );
               }

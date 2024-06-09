@@ -35,19 +35,13 @@ const CHALLENGES_LIST = [
     imgUrl: brainIcon,
     to: CHALLENGES.FAST_WORD,
   },
-  /* {
-    title: 'Hãy chọn từ đúng (nâng cao)',
-    subTitle: 'Chọn tất cả các từ đồng nghĩa (trái nghĩa) với từ đã cho.',
-    imgUrl: correctWordAdvIcon,
-    to: CHALLENGES.CORRECT_WORD_ADV,
-  }, */
-
-  /*  {
-    title: 'Ai là triệu phú',
+  
+  {
+    title: 'Điền vào chỗ trống',
     subTitle:
-      'Trải nghiệm show truyền hình "Ai là triệu phú" phiên bản tiếng Anh ngay với Luckclover English',
-    imgUrl: millionaireIcon,
-    to: CHALLENGES.MILLIONAIRE,
+      'Luyện tập ngữ pháp với câu trắc nghiệm điền vào chỗ trống sao cho phù hợp nhé.',
+    imgUrl: grammarlyIcon,
+    to: CHALLENGES.GRAMMARLY,
   },
   {
     title: 'Nối từ',
@@ -56,13 +50,13 @@ const CHALLENGES_LIST = [
     imgUrl: jigsawIcon,
     to: CHALLENGES.JIGSAW,
   },
-  {
-    title: 'Điền vào chỗ trống',
+  /*  {
+    title: 'Ai là triệu phú',
     subTitle:
-      'Luyện tập ngữ pháp với câu trắc nghiệm điền vào chỗ trống sao cho phù hợp nhé.',
-    imgUrl: grammarlyIcon,
-    to: CHALLENGES.GRAMMARLY,
-  }, */
+      'Trải nghiệm show truyền hình "Ai là triệu phú" phiên bản tiếng Anh ngay với Luckclover English',
+    imgUrl: millionaireIcon,
+    to: CHALLENGES.MILLIONAIRE,
+  },
   /*   {
     title: 'VIP',
     subTitle:

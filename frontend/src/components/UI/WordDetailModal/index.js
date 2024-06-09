@@ -68,7 +68,7 @@ function WordDetailModal(props) {
         <div className={classes.content}>
           <div className="flex-center--ver my-4">
             {picture && picture !== '' && (
-              <image
+              <img
                 src={cloudinaryImgOptimize(picture, 56, 56, true)}
                 alt="Photo"
                 className={`${classes.picture} mr-8`}

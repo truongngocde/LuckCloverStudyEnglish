@@ -3,7 +3,7 @@ import { TOPICS } from '../../../constants/topics';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMessage } from '../../../redux/slices/messageSlice';
-import FastWord from '.';
+import FastWord from './index';
 import useStyle from './style';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
@@ -25,7 +25,7 @@ function FastWordData() {
 
     (async function () {
       try {
-        const apiRes = await challengesApi.getWordPackFG(topicKey);
+        const apiRes = await challengesApi.getWordPackWordFast(topicKey);
 
         if (apiRes.status === 200 && isSub) {
           const { wordPack = [] } = apiRes.data;

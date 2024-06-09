@@ -112,3 +112,16 @@ exports.checkVerifyCode = async (code = '', email = '') => {
 exports.removeVerifyCode = async (email = '') => {
     await Verifycode.deleteOne({ email });
 }
+
+
+
+const getRandomWords = async (excludeWords, n) => {
+  // Lấy các từ ngẫu nhiên từ database, loại bỏ các từ đã cho trước
+  const words = await Word.aggregate([
+    { $match: { word: { $nin: excludeWords } } },
+    { $sample: { size: n } }
+  ]);
+  return words.map(word => word.word);
+};
+
+

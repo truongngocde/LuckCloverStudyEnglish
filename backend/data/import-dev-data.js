@@ -27,7 +27,7 @@ const sentences = JSON.parse(fs.readFileSync(`${__dirname}/sentences.json`, 'utf
 const importData = async () => {
     try {
         await Word.create(words);
-        await Sentence.create(sentences);
+        // await Sentence.create(sentences);
         console.log('Data success loaded');
     } catch (error) {
         console.log(error);
@@ -39,7 +39,7 @@ const importData = async () => {
 const deleteAll = async() => {
     try {
         await Word.deleteMany();
-        await Sentence.deleteMany();
+        // await Sentence.deleteMany();
 
         console.log("Delete all data success");
     } catch (error) {

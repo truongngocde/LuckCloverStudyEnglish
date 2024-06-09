@@ -3,7 +3,7 @@ import WordDetailModal from '../../UI/WordDetailModal';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setMessage } from '../../../redux/slices/messageSlice';
-import DictionaryItem from '.';
+import DictionaryItem from './index';
 
 function DictionaryItemData(props) {
   const [modal, setModal] = useState({ loading: false, open: false });
