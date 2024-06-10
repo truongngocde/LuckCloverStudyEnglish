@@ -20,7 +20,7 @@ export const DEFAULTS = {
   VOICE_SPEED: 1,
   VOICE_VOLUME: 1,
   IMAGE_SRC:
-    'https://res.cloudinary.com/doon70xws/image/upload/v1717847803/luckcloverEnglish/words/c7fzzgve8ibklv438rop.jpg',
+    'https://res.cloudinary.com/doon70xws/image/upload/v1718006005/luckcloverEnglish/nzidioih09etdldghrwg.png',
 };
 
 export const LINKS = {

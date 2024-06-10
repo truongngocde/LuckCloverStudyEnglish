@@ -11,7 +11,7 @@ import { setAddFavorites } from '../../redux/slices/useInfoSlice';
 
 function WordFavorite({ word }) {
   const { isAuth, username, favoriteList } = useSelector(
-    (state) => state.userInfo,
+    (state) => state.userInfo
   );
   const history = useNavigate();
   const dispatch = useDispatch();
@@ -20,22 +20,20 @@ function WordFavorite({ word }) {
     favoriteList.findIndex((i) => i.toLowerCase() === word.toLowerCase()) !==
     -1;
 
-  const handleClick = async () => {
-    try {
-      const apiRes = await accountApi.putToggleWordFavorite(
-        username,
-        word,
-        !isFavorite,
-      );
-      if (apiRes.status === 200) {
-        dispatch(setAddFavorites({ word, isAdd: !isFavorite }));
+    const handleClick = async () => {
+      try {
+        const apiRes = await accountApi.putToggleWordFavorite(username, word, !isFavorite);
+        if (apiRes.status === 200) {
+          dispatch(setAddFavorites({ word, isAdd: !isFavorite }));
+          dispatch(setMessage({ type: 'success', message: 'Thành công' }));
+        }
+      } catch (error) {
+        console.error('API call failed:', error);
+        const message = error.response?.data?.message || 'Thất bại, thử lại !';
+        dispatch(setMessage({ type: 'error', message }));
       }
-    } catch (error) {
-      const message = error.response?.data?.message || 'Thất bại, thử lại !';
-      dispatch(setMessage({ type: 'error', message }));
-    }
-  };
-
+    };
+    
   return (
     <>
       {isAuth ? (
@@ -46,7 +44,10 @@ function WordFavorite({ word }) {
               className="luckclover-favorite active"
             />
           ) : (
-            <UnFavoriteIcon onClick={handleClick} className="luckclover-favorite" />
+            <UnFavoriteIcon
+              onClick={handleClick}
+              className="luckclover-favorite"
+            />
           )}
         </>
       ) : (

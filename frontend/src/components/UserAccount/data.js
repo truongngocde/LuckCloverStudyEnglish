@@ -39,6 +39,10 @@ function UserAccountData() {
         );
 
         dispatch(setUserAvt(apiRes.data.newSrc));
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 750);
       }
     } catch (error) {
       dispatch(

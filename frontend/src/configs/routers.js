@@ -14,7 +14,9 @@ const Flashcard = React.lazy(() => import('../pages/Flashcard'));
 const IrregularVerbPage = React.lazy(() => import('../pages/IrregularVerb'));
 const GrammarPage = React.lazy(() => import('../pages/Grammar'));
 const DictionaryPage = React.lazy(() => import('../pages/Dictionary'));
+const FavoriteDictionaryPage = React.lazy(() => import('../pages/FavoriteDictionary'));
 const Contribution = React.lazy(() => import('../pages/Contribution'));
+const LeaderBoard = React.lazy(() => import('../pages/LeaderBoard'));
 
 const ChallengesPage = React.lazy(() => import('../pages/Challenges'));
 const CorrectWordPage = React.lazy(() => import('../pages/Challenges/CorrectWord'));
@@ -85,6 +87,12 @@ const routes = [
     component: () => <DictionaryPage isTOEIC={true}/>,
   },
   {
+    path: ROUTES.FAVORITE,
+    exact: false,
+    isProtect: false,
+    component: () => <FavoriteDictionaryPage/>,
+  },
+  {
     path: ROUTES.FLASHCARD,
     exact: true,
     isProtect: false,
@@ -101,6 +109,12 @@ const routes = [
     exact: false,
     isProtect: false,
     component: () => <Contribution />,
+  },
+  {
+    path: ROUTES.LEADERBOARD,
+    exact: false,
+    isProtect: false,
+    component: () => <LeaderBoard />,
   },
   {
     path: ROUTES.CHALLENGES.HOME,

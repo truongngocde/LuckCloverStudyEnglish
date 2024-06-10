@@ -13,6 +13,6 @@ router.get('/exist', wordControllers.getCheckWordExist);
 router.get('/pack', wordControllers.getWordsPack)
 router.get('/search-word', wordControllers.getSearchWord)
 router.get('/word-details', wordControllers.getWordDetails);
-router.get('/favorite-list', wordControllers.getUserFavoriteList);
+router.get('/favorite-list',jwtAuthentication, wordControllers.getUserFavoriteList);
 
 module.exports = router;
