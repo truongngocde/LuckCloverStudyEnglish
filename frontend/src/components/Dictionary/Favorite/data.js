@@ -62,13 +62,15 @@ function FavoriteDictionaryData() {
           perPage,
           // sortType,
         );
+        
         if (apiRes.status === 200 && isSub) {
-          const { packList = [] } = apiRes.data;
-          const newList = [...list, ...packList];
+          const packList  = apiRes.data.listFavorite;
+          const newList = [...list, ...packList];   
           preSearchList.current = newList;
           setList(newList);
         }
       } catch (error) {
+        console.log(error)
       } finally {
         if (isSub) {
           setLoading(false);
@@ -91,7 +93,7 @@ function FavoriteDictionaryData() {
         // onSortTypeChange={onSortTypeChange}
         onSearchWord={onSearchWord}
       />
-      {/* <WordDetailModal /> */}
+      <WordDetailModal />
     </>
   );
 }

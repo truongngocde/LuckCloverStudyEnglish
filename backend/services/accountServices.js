@@ -90,6 +90,14 @@ exports.updateFavoriteList = async (word, username, isAdd = false) => {
           $push: { favoriteList: word },
         }
       );
+    } else {
+      // Remove the word from the favorite list
+      return await User.updateOne(
+        { username },
+        {
+          $pull: { favoriteList: word },
+        }
+      );
     }
   } catch (error) {
     throw error;
@@ -102,7 +110,7 @@ exports.updateUserCoin = async (newCoin = 0, username = '') => {
             return false;
         }
         const updateRes = await User.updateOne({ username}, {coin: newCoin});
-        if (updateRes.ok) {
+        if (updateRes.acknowledged) {
             return true;
         }
     } catch (error) {
@@ -127,8 +135,12 @@ exports.updatePassword = async (email = '', newPassword = '') => {
 exports.updateAvt = async ( username = '', avtSrc = '') => {
     try {
         const picture = await uploadImage(avtSrc, 'luckcloverEnglish/user-avt');
+        console.log(picture)
         const isUpdated = await User.updateOne({username}, {avt: picture});
-        if (isUpdated.n && isUpdated.ok) return picture;
+        console.log(isUpdated)
+        if (isUpdated && isUpdated.acknowledged && isUpdated.modifiedCount) {
+          return picture;
+        }
 
         return false;
     } catch (error) {

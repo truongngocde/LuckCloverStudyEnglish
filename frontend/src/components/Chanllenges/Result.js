@@ -62,7 +62,9 @@ function CorrectWordResult({ nRight, nWrong, nRightConsecutive, onReplay }) {
         );
 
         const apiRes = await accountApi.putUpdateUserCoin(newCoin);
+        
         if (apiRes.status === 200) {
+          
           dispatch(setUserCoin(newCoin));
         }
       } catch (error) {}

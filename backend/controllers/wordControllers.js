@@ -146,7 +146,7 @@ exports.getUserFavoriteList = async (req, res, next) => {
       return res.status(200).json({ list: [] });
     }
 
-    let { page, perPage, sortType } = req.query;
+    let { page = 1, perPage = 10, sortType = 'asc' } = req.query;
     page = parseInt(page);
     perPage = parseInt(perPage);
 
@@ -156,12 +156,14 @@ exports.getUserFavoriteList = async (req, res, next) => {
     } else if (sortType === 'desc') {
       favoriteSorted.sort((a, b) => (a > b ? -1 : a < b ? 1 : 0));
     }
+
     favoriteSorted = favoriteSorted.slice((page - 1) * perPage, page * perPage);
 
-    const packList = await getFavoriteList({ favoriteSorted });
-    return res.status(200).json({ packList });
+    const packList = await getFavoriteList(favoriteSorted);
+    return res.status(200).json({ listFavorite: packList });
   } catch (error) {
-    console.error(' ERROR: ', error);
+    console.error('ERROR: ', error);
     return res.status(500).json({ message: 'Lỗi dịch vụ, thử lại sau' });
   }
 };
+

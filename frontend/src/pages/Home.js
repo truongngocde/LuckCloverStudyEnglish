@@ -51,9 +51,9 @@ const FEATURE_LIST = [
     to: ROUTES.TOEIC_DICTIONARY,
   },
   {
-    title: 'Từ vựng yêu thích của bạn',
+    title: 'Từ vựng ghi nhớ của bạn',
     imgUrl: favoriteIcon,
-    subTitle: 'Danh sách những từ vựng yêu thích mà bạn đã lưu',
+    subTitle: 'Danh sách những từ vựng bạn cần ghi nhớ trong thời gian học',
     to: ROUTES.FAVORITE,
   },
   {

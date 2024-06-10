@@ -193,7 +193,6 @@ exports.postResetPassword = async (req, res) => {
 exports.putToggleFavorite = async (req, res) => {
   try {
     const { word, username, isAdd = false } = req.body;
-
     const isExist = await isExistWordInFavorites(word, username);
 
     if (isAdd) {
@@ -201,27 +200,22 @@ exports.putToggleFavorite = async (req, res) => {
 
       if (isLimited) {
         return res.status(409).json({
-          message:
-            'Số từ đã vượt quá số lượng tối đa của danh sách yêu thích. Hãy nâng cấp nó.',
+          message: 'Số từ đã vượt quá số lượng tối đa của danh sách yêu thích. Hãy nâng cấp nó.',
         });
       }
 
       if (isExist) {
-        return res
-          .status(406)
-          .json({ message: `Từ ${word} đã tồn tại trong danh sách` });
+        return res.status(406).json({ message: `Từ ${word} đã tồn tại trong danh sách` });
       }
     } else {
       if (!isExist) {
-        return res
-          .status(406)
-          .json({ message: `Từ ${word} không tồn tại trong danh sách` });
+        return res.status(406).json({ message: `Từ ${word} không tồn tại trong danh sách` });
       }
     }
 
     const updateStatus = await updateFavoriteList(word, username, isAdd);
-
-    if (updateStatus && updateStatus.ok && updateStatus.nModified) {
+    // Check if the update was acknowledged and modified at least one document
+    if (updateStatus && updateStatus.acknowledged && updateStatus.modifiedCount > 0) {
       return res.status(200).json({ message: 'Thành công' });
     } else {
       return res.status(409).json({ message: 'Thất bại' });
@@ -233,16 +227,17 @@ exports.putToggleFavorite = async (req, res) => {
   }
 };
 
+
 exports.putUpdateUserCoin = async (req, res) => {
   try {
     const { newCoin } = req.body;
     const username = req.user?.username;
+    console.log("username : ",req.user?.username)
     if (!username) {
       return res.status(406).json({ message: 'Not Accept' });
     }
 
     const update = await updateUserCoin(newCoin, username);
-
     if (update) {
       return res.status(200).json({ message: 'success' });
     }
@@ -258,10 +253,14 @@ exports.putUpdateAvt = async (req, res, next) => {
   try {
     const { user } = req;
     const { avtSrc } = req.body;
-    if (!Boolean(avtSrc) || !Boolean(user)) {
+
+    if (!avtSrc || !user) {
       return res.status(400).json({ message: 'failed' });
     }
+
     const update = await updateAvt(user.username, avtSrc);
+    console.log(update);
+
     if (!update) {
       return res.status(400).json({ message: 'failed' });
     }
@@ -273,6 +272,7 @@ exports.putUpdateAvt = async (req, res, next) => {
   }
 };
 
+
 exports.putUpdateProfile = async (req, res, next) => {
   try {
     const { user } = req;
@@ -282,7 +282,7 @@ exports.putUpdateProfile = async (req, res, next) => {
     }
 
     const update = await updateProfile(user.username, name, username);
-    if (!update.status) {
+    if (update) {
       return res.status(400).json({ message: update.message });
     }
 

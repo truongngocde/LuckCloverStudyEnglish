@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import axiosClient from './axiosClient';
 const URL = 'http://localhost:8080/apis/words';
 
 const wordApi = {
@@ -28,9 +28,9 @@ const wordApi = {
     return axios.get(`${URL}/word-details`, { params: { word } });
   },
 
-  getUserFavoriteList: (page = 0, perPage = 20, sortType = 'rand') => {
-    return axios.get(`${URL}/favorite-list`, {
-      params: { page, perPage, sortType },
+  getUserFavoriteList: (page = 0, perPage = 20) => {
+    return axiosClient.get(`${URL}/favorite-list`, {
+      params: { page, perPage},
     });
   },
 };

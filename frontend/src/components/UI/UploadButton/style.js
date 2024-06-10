@@ -7,7 +7,7 @@ export default makeStyles(() => ({
 
   btn: {
     minHeight: '5.6rem',
-    backgroundColor: 'var(--bg-color-accent) !important',
+    // backgroundColor: 'var(--bg-color-accent) !important',
     boxShadow: 'none !important',
     border: 'solid 1px var(--border-color)',
     color: 'var(--label-color)',

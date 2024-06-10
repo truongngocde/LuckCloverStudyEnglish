@@ -107,7 +107,7 @@ function UserAccount({ onUpload, onUpdateProfile, email, createdDate }) {
             />
 
             <div className={`${classes.cameraIconWrap} flex-center`}>
-              <CameraIcon className={classes.cameraIcon} />
+              {/* <CameraIcon className={classes.cameraIcon} /> */}
 
               <UploadButton className={classes.fileInput} onChange={onUpload} />
             </div>
