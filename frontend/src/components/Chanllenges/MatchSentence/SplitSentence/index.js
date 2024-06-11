@@ -3,7 +3,6 @@ import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/LiveHelp';
 import sentenceApi from '../../../../apis/sentenceApi';
 import Speaker from '../../../UI/Speaker';
-import SentenceDetailModal from '../../../UI/SentenceDetailModal';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import useStyle from './style';
@@ -211,15 +210,7 @@ function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
         {renderOriginSplit()}
       </div>
 
-      {/* word detail modal */}
-      {modal.show && (
-        <SentenceDetailModal
-          open={modal.show}
-          loading={modal.loading}
-          onClose={() => setModal({ loading: false, data: null, show: false })}
-          {...modal.data}
-        />
-      )}
+      
     </div>
   );
 }

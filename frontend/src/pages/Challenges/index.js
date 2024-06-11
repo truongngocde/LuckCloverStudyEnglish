@@ -44,12 +44,19 @@ const CHALLENGES_LIST = [
     to: CHALLENGES.SENTENCE_MATCHING,
   },
   {
-    title: 'Nối từ',
+    title: 'Luyện nói từ vựng',
     subTitle:
-      'Cùng bắt trend nối từ đã từ rầm rộ trên mạng xã hội với Luckclover nhé. Đặc biệt, bạn có thể chơi cùng bạn bè nhé 😮',
-    imgUrl: jigsawIcon,
-    to: CHALLENGES.JIGSAW,
+      'Luyện tập từ vựng bằng cách luyện nói sao cho phù hợp nhé.',
+    imgUrl: millionaireIcon,
+    to: CHALLENGES.SPEAK_WORD_MATCHING,
   },
+  // {
+  //   title: 'Nối từ',
+  //   subTitle:
+  //     'Cùng bắt trend nối từ đã từ rầm rộ trên mạng xã hội với Luckclover nhé. Đặc biệt, bạn có thể chơi cùng bạn bè nhé 😮',
+  //   imgUrl: jigsawIcon,
+  //   to: CHALLENGES.JIGSAW,
+  // },
   /*  {
     title: 'Ai là triệu phú',
     subTitle:
