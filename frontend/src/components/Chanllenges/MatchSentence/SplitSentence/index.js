@@ -3,6 +3,7 @@ import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/LiveHelp';
 import sentenceApi from '../../../../apis/sentenceApi';
 import Speaker from '../../../UI/Speaker';
+import SentenceDetailModal from '../../../UI/SentenceDetailModal';
 import PropTypes from 'prop-types';
 import React, { useEffect, useRef, useState } from 'react';
 import useStyle from './style';
@@ -31,8 +32,8 @@ function splitSentence(sentence = '') {
   return splitArr;
 }
 
-function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
-  const originSplit = useRef(splitSentence(sentence.toLowerCase()));
+function SplitWord({ sentence, mean, onCorrect, onWrong, resetFlag }) {
+  const originSplit = useRef(splitSentence(sentence));
   const [userSplit, setUserSplit] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isCheck, setIsCheck] = useState(false);
@@ -105,7 +106,7 @@ function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
   const renderUserSplit = () => {
     return userSplit.map((item, key) => {
       const correctClass =
-        item.ch === sentence.toLowerCase()[key] ? 'right' : 'wrong';
+        item.ch === sentence[key] ? 'right' : 'wrong';
       return (
         <div
           key={key}
@@ -126,7 +127,7 @@ function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
     }
 
     const answer = userSplit.map((i) => i.ch).join('');
-    if (answer.toLowerCase() === sentence.toLowerCase()) {
+    if (answer === sentence) {
       isSub && setIsCorrect(true);
       onCorrect();
     } else {
@@ -150,7 +151,7 @@ function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
       setIsCheck(false);
       setIsCorrect(false);
       setUserSplit([]);
-      originSplit.current = splitSentence(sentence.toLowerCase());
+      originSplit.current = splitSentence(sentence);
     }
 
     return () => (isSub = false);
@@ -210,25 +211,33 @@ function SplitSentence({ sentence, mean, onCorrect, onWrong, resetFlag }) {
         {renderOriginSplit()}
       </div>
 
-      
+      {/* word detail modal */}
+      {modal.show && (
+        <SentenceDetailModal
+          open={modal.show}
+          loading={modal.loading}
+          onClose={() => setModal({ loading: false, data: null, show: false })}
+          {...modal.data}
+        />
+      )}
     </div>
   );
 }
 
-SplitSentence.propTypes = {
+SplitWord.propTypes = {
   mean: PropTypes.string,
   onCorrect: PropTypes.func,
   onWrong: PropTypes.func,
   resetFlag: PropTypes.number,
-  sentence: PropTypes.string,
+  word: PropTypes.string,
 };
 
-SplitSentence.defaultProps = {
+SplitWord.defaultProps = {
   mean: '',
-  sentence: '',
+  word: '',
   onCorrect: function () {},
   onWrong: function () {},
   resetFlag: -1,
 };
 
-export default SplitSentence;
+export default SplitWord;

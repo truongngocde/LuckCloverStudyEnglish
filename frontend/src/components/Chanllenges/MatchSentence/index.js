@@ -34,7 +34,7 @@ function SentenceMatch({ list }) {
   };
 
   const handleCorrect = () => {
-    playSoundAnswer(list[current].sentence, true, voice, volume, speed);
+    playSoundAnswer(list[current].word, true, voice, volume, speed);
     setIsDelay(true);
     nRightConsecutive.current.n++;
     if (nRightConsecutive.current.n > nRightConsecutive.current.top) {
@@ -94,7 +94,7 @@ function SentenceMatch({ list }) {
         <div className="luckclover-title">
           <image src={logoChallenges} alt="challenges photo" />
           <h1 className="flex-center--ver">
-            <span>Ghép câu</span>
+            <span>Ghép từ</span>
             <TooltipCustom title="Chọn các ký tự để tạo thành một từ có nghĩa đúng với từ tiếng Việt được cho">
               <HelpIcon className="ml-5" />
             </TooltipCustom>
@@ -130,7 +130,7 @@ function SentenceMatch({ list }) {
               />
             ) : (
               <h3 className="flex-center notfound-title">
-                Gói câu hiện tại không khả dụng, vui lòng thử lại sau. Cảm
+                Gói từ vựng hiện tại không khả dụng, vui lòng thử lại sau. Cảm
                 ơn !
               </h3>
             )}

@@ -11,7 +11,7 @@ import { setMessage } from '../../../redux/slices/messageSlice';
 import SpeakWordMatch from '.';
 const MAX_LEN_WORD_PACK = 500;
 
-function WordMatchData() {
+function SpeakWordMatchData() {
   // 0 - choose word pack, 1 - get pack, 2 - done
   const [state, setState] = useState(0);
   const [wordPack, setWordPack] = useState([]);
@@ -105,4 +105,4 @@ function WordMatchData() {
   );
 }
 
-export default WordMatchData;
+export default SpeakWordMatchData;

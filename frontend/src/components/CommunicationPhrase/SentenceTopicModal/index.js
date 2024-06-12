@@ -21,7 +21,7 @@ function SentenceTopicModal({ onClose, onSelect, open }) {
       keepMounted
       maxWidth="md"
       onClose={onClose}>
-      <DialogTitle className={classes.title}>Chọn chủ đề</DialogTitle>
+      <DialogTitle className={classes.title}>Chọn chủ đề....</DialogTitle>
 
       <DialogContent dividers classes={{ dividers: classes.breakLine }}>
         <ul className="d-flex flex-wrap">

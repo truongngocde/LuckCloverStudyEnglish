@@ -3,7 +3,7 @@ import brainIcon from '../../assets/icons/challenges/brain.png';
 import correctWordIcon from '../../assets/icons/challenges/correct-word.png';
 import grammarlyIcon from '../../assets/icons/challenges/grammarly.png';
 import jigsawIcon from '../../assets/icons/challenges/jigsaw.png';
-import millionaireIcon from '../../assets/icons/challenges/millionaire.png';
+import speakwordIcon from '../../assets/icons/challenges/speak-word.png';
 import wordMatchingIcon from '../../assets/icons/challenges/word-match.png';
 import FeatureBox from '../../components/FeatureBox';
 import { ROUTES } from '../../constants';
@@ -47,7 +47,7 @@ const CHALLENGES_LIST = [
     title: 'Luyện nói từ vựng',
     subTitle:
       'Luyện tập từ vựng bằng cách luyện nói sao cho phù hợp nhé.',
-    imgUrl: millionaireIcon,
+    imgUrl: speakwordIcon,
     to: CHALLENGES.SPEAK_WORD_MATCHING,
   },
   // {

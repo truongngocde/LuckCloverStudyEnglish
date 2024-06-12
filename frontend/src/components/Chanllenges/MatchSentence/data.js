@@ -3,23 +3,23 @@ import PlayIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import challengesApi from '../../../apis/challengesApi';
 import GlobalLoading from '../../UI/GlobalLoading';
 import InputCustom from '../../UI/InputCustom';
-import WordPack from '../../UI/WorkPack';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setMessage } from '../../../redux/slices/messageSlice';
+import SentenceTopicModal from '../../CommunicationPhrase/SentenceTopicModal/'
 import SentenceMatch from '.';
 const MAX_LEN_WORD_PACK = 500;
 
-function SentenceMatchData() {
+function SentenceMatchData({onSelectTopic}) {
   // 0 - choose word pack, 1 - get pack, 2 - done
   const [state, setState] = useState(0);
   const [sentencePack, setSentencePack] = useState([]);
   const dispatch = useDispatch();
   const history = useNavigate();
   const nQuestion = useRef(50);
-
-  const getSentencePackage = async ({topics}) => {
+  const [showTopicModal, setShowTopicModal] = useState(true);
+  const getSentencePackage = async ({ topics}) => {
     try {
       setState(1);
       const n =
@@ -32,7 +32,7 @@ function SentenceMatchData() {
         n,
       );
       if (apiRes.status === 200) {
-        const { sentencePack = [] } = apiRes.data;
+        const sentencePack = apiRes.data;
         if (sentencePack.length === 0) {
           dispatch(
             setMessage({
@@ -68,8 +68,20 @@ function SentenceMatchData() {
   };
 
   return (
-    <SentenceMatch list={sentencePack} />
+    <>
+      {state === 0 ? (
+        <SentenceTopicModal
+        onClose={() => history('/challenges')}
+        open={showTopicModal}
+        onSelectTopic={onSelectTopic}
+      />
+      ) : state === 1 ? (
+        <GlobalLoading title="Đang tải gói câu hỏi ..." />
+      ) : (
+        <SentenceMatch list={sentencePack} />
+      )}
+    </>
   );
 }
-
+                       
 export default SentenceMatchData;
