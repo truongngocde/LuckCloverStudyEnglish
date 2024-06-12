@@ -161,9 +161,9 @@ function FastWord({ list }) {
   const restTime = useRef(TOTAL_TIME);
   const [isDone, setIsDone] = useState(false);
 
-  const onDone = () => {
-    setScore(score + ~~(restTime / 1000) * SCORE_PER_SEC);
+  const onDone = (finalScore) => {
     setIsDone(true);
+    setScore(finalScore);
   };
 
   // flag to increase or decrease time
@@ -173,20 +173,22 @@ function FastWord({ list }) {
   });
 
   const handleCorrect = () => {
+    const newScore = score + CORRECT_SCORE;
+  
     if (currentIndex.current >= list.length - 1) {
-      onDone();
+      onDone(newScore);
       return;
     }
-
+  
     const newWord = list[currentIndex.current + 1].word;
     const newAnswerList = generateAnswerList(list, newWord);
-
+  
     setWord(newWord);
     setAnswerList([...newAnswerList]);
     currentIndex.current++;
-
+  
     setFlag({ ...flag, correct: flag.correct + 1 });
-    setScore(score + CORRECT_SCORE);
+    setScore(newScore);
   };
 
   const handleWrong = (removeIndex) => {

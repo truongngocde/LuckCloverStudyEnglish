@@ -3,7 +3,7 @@ import WrongIcon from '@mui/icons-material/Cancel';
 import RightIcon from '@mui/icons-material/CheckCircle';
 import HelpIcon from '@mui/icons-material/Help';
 import incorrectAudio from '../../../assets/audios/incorrect.mp3';
-import logoChallenges from '../../../assets/icons/challenges/speak-word.png';
+import logoChallenges from '../../../assets/icons/challenges/word-match.png';
 import TooltipCustom from '../../UI/TooltipCustom';
 import { UX } from '../../../constants';
 import { onPlayAudio, playSoundAnswer } from '../../../helpers/speakerHelper';
@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 import React, { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import CorrectWordResult from '../Result';
-import SpeakWord from './SpeakWord';
 import useStyle from './style';
 import useSpeechRecognition from '../../../hooks/useSpeechRecognition'; // Đảm bảo đường dẫn chính xác
 
@@ -101,9 +100,9 @@ function WordMatch({ list }) {
       <div className={`${classes.root} container luckclover-box position-rel`}>
         {/* title */}
         <div className="luckclover-title">
-        <img src={logoChallenges} alt="challenges photo" style={{ borderRadius: 100 }} />
+          <img src={logoChallenges} alt="challenges photo" />
           <h1 className="flex-center--ver">
-            <span>Luyện nói từ vựng</span>
+            <span>Ghép từ</span>
             <TooltipCustom title="Sử dụng giọng nói để đọc từ đúng với nghĩa tiếng Việt được cho">
               <HelpIcon className="ml-5" />
             </TooltipCustom>
@@ -132,11 +131,13 @@ function WordMatch({ list }) {
             {list && list.length > 0 ? (
               <div className="flex-center-col">
                 {current < nQuestion ? (
-                  <SpeakWord mean={list[current].mean}
-                  word={list[current].word}
-                  onCorrect={handleCorrect}
-                  onWrong={handleWrong}
-                  />
+                  <>
+                    <p>Hãy đọc từ: <b>{list[current].word}</b></p>
+                    <button onClick={isListening ? stopListening : startListening}>
+                      {isListening ? 'Dừng' : 'Bắt đầu'} nhận dạng giọng nói
+                    </button>
+                    <p>Kết quả nhận dạng: <b>{text}</b></p>
+                  </>
                 ) : (
                   <h3 className="flex-center notfound-title">
                     Bạn đã hoàn thành tất cả các câu hỏi!

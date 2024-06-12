@@ -1,5 +1,5 @@
 import { makeStyles } from '@mui/styles';
-import { Mic, RecordVoiceOver  } from '@mui/icons-material';
+import { Mic } from '@mui/icons-material';
 import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import { Button } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
@@ -22,7 +22,6 @@ function SpeakWord({ word, mean, onCorrect, onWrong, resetFlag }) {
     hasRecognitionSupport,
   } = useSpeechRecognition();
   const originWord = useRef(word.toLowerCase());
-
   const [isCorrect, setIsCorrect] = useState(false);
   const [isCheck, setIsCheck] = useState(false);
   const [modal, setModal] = useState({

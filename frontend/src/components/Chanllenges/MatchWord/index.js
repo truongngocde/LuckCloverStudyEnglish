@@ -41,7 +41,7 @@ function WordMatch({ list }) {
       nRightConsecutive.current.top = nRightConsecutive.current.n;
     }
     setTimeout(() => {
-      if (current >= nQuestion) {
+      if (current + 1 >= nQuestion) {
         handleDone();
       } else {
         setIsDelay(false);
