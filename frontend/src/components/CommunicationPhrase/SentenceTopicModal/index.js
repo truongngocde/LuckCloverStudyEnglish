@@ -20,8 +20,9 @@ function SentenceTopicModal({ onClose, onSelect, open }) {
       open={open}
       keepMounted
       maxWidth="md"
-      onClose={onClose}>
-      <DialogTitle className={classes.title}>Chọn chủ đề....</DialogTitle>
+      onClose={onClose}
+    >
+      <DialogTitle className={classes.title}>Chọn chủ đề...</DialogTitle>
 
       <DialogContent dividers classes={{ dividers: classes.breakLine }}>
         <ul className="d-flex flex-wrap">
@@ -30,9 +31,7 @@ function SentenceTopicModal({ onClose, onSelect, open }) {
               <Tag
                 title={topic.title}
                 id={topic.key}
-                onChange={(idTopic) =>
-                  addOrDelItemInArray(topicRef.current, idTopic)
-                }
+                onChange={(idTopic) => addOrDelItemInArray(topicRef.current, idTopic)}
               />
             </div>
           ))}
@@ -45,7 +44,8 @@ function SentenceTopicModal({ onClose, onSelect, open }) {
         </Button>
         <Button
           onClick={() => onSelect(topicRef.current)}
-          className="_btn _btn-primary">
+          className="_btn _btn-primary"
+        >
           OK
         </Button>
       </DialogActions>
@@ -61,8 +61,8 @@ SentenceTopicModal.propTypes = {
 
 SentenceTopicModal.defaultProps = {
   open: false,
-  onClose: function () {},
-  onSelect: function () {},
+  onClose: () => {},
+  onSelect: () => {},
 };
 
 export default SentenceTopicModal;

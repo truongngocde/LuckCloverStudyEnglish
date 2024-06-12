@@ -34,7 +34,7 @@ function SentenceMatch({ list }) {
   };
 
   const handleCorrect = () => {
-    playSoundAnswer(list[current].word, true, voice, volume, speed);
+    playSoundAnswer(list[current].sentence, true, voice, volume, speed);
     setIsDelay(true);
     nRightConsecutive.current.n++;
     if (nRightConsecutive.current.n > nRightConsecutive.current.top) {

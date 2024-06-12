@@ -165,6 +165,7 @@ function SplitWord({ sentence, mean, onCorrect, onWrong, resetFlag }) {
       (async function () {
         try {
           const apiRes = await sentenceApi.getSentenceDetails(sentence);
+          console.log(apiRes)
           if (apiRes.status === 200 && isSub) {
             setModal({ show: true, loading: false, data: { ...apiRes.data } });
           }
